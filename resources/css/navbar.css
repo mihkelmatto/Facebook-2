@@ -1,0 +1,36 @@
+.navbar{
+    font-size: 25px; 
+    
+}
+
+.navbar li{
+    display: block;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    justify-content: left;
+    align-items: center;
+     
+}
+
+.navbar a{
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    min-width: 175px;
+    color: hsl(0, 0%, 100%);
+}
+
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+.navbar a.nav-active{
+    color: red;
+}
