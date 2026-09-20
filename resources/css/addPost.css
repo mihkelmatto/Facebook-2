@@ -1,0 +1,31 @@
+body{
+    background-color: hsl(0, 0%, 43%);
+    font-family: Bahnschrift, Arial;
+    color: hsl(0, 0%, 100%);
+    padding: 0px;
+    margin: 0px;
+}
+
+a:any-link{
+    color: hsl(229, 100%, 50%);
+    text-decoration: none;
+}
+
+a:any-link:hover{
+    color: hsl(261, 100%, 50%)
+}
+
+header, header *{
+    background-color: hsl(0, 0%, 17%);
+}
+
+header{
+    border-bottom: 1px solid hsl(0, 0%, 45%);
+}
+
+footer, footer *{
+    background-color: hsl(0, 0%, 17%);
+}
+
+footer{
+    border-top: 1px solid hsl(0, 0%, 45%);
