@@ -1,8 +1,18 @@
-body main{
-    min-height: 85vh;
-    padding: 0 10vw 0 10vw;
+main{
+    padding: 10px 0px;
 }
 
-.contentcard *{
-    border: 1px solid rgb(238, 0, 0);
+.contentcard{
+    padding: 20px;
+    width: 60vw;
+    background-color: var(--bg-content);
+    border: 1px solid hsl(0, 0%, 45%);
+    border-radius: 30px;
+}
+
+.contentcard-title{
+    margin: 0px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--text-hover);
 }
