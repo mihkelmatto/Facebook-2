@@ -9,10 +9,46 @@ main{
     border: 1px solid hsl(0, 0%, 45%);
     border-radius: 30px;
 }
+.contentcard-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px;
+
+    gap: 20px;
+}
 
 .contentcard-title{
-    margin: 0px;
     font-size: 25px;
     font-weight: bold;
     color: var(--text-hover);
+}
+
+.contentcard-date{
+    margin-left: auto;
+}
+
+.contentcard-picture{
+    display: block;
+    margin: auto;
+    width: 80%;
+
+    border-radius: 10px
+}
+
+.contentcard-description{
+
+}
+
+.contentcard-like{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+
+    border: 2px solid var(--border-primary);
+    border-radius: 12px;
+}
+
+.contentcard-like:hover{
+    background-color: rgba(255, 255, 255, 0.178);
 }
