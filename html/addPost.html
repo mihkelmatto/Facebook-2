@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add Post</title>
     <link rel="stylesheet" href="/resources/css/global.css">
     <link rel="stylesheet" href="/resources/css/navbar.css">
     <link rel="stylesheet" href="/resources/css/addPost.css">
@@ -11,6 +11,7 @@
     
 </head>
 <body>
+    <header>
     <nav class="navbar">
         <ul>
             <li>
@@ -21,15 +22,34 @@
             </li>
         </ul>
     </nav>
+    </header>
 
+    
+    
     <h1 style="text-align:center;">Post Body</h1>
-    <textarea style="display: block; margin: 0 auto; width: 40%; max-width: 600px; height: 200px; background-color: hsl(0, 0%, 91%); color: hsl(0, 0%, 100%); border: none; padding: 10px;" placeholder="Textarea"></textarea>
+
+    <div class="container">
+        
+        <div style="max-width: 300px;">
+            <p>Post body</p>
+        </div>
+        
+        <textarea class="Text_area" placeholder="Textarea"></textarea>
+
+        <div>
+        <p>Select an image to upload</p>
+        <choose-file upload-url="/upload" style=" color: hsl(0, 0%, 100%); border: none; padding: 10px;" placeholder="Choose a file"></choose-file>
+        </div></span><input accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska,.mkv,.avi,.wmv,.mov,.flv,.webm,.3gp,.3g2,.mts,.m2ts,.vob,.divx,.f4v,.ogv" multiple="" type="file" data-interactable="|click|"><span>
+        </span>
+        <form action="/action_page.php">
+        <input type="submit">
+        </div>
     
-    <p style="text-align:center;">Select an image to upload</p>
-    <choose-file upload-url="/upload" style="display: block; margin: 0 auto; width: 5%; max-width: 600px; height: 25px; background-color: hsl(0, 0%, 25%); color: hsl(0, 0%, 100%); border: none; padding: 10px;" placeholder="Choose a file"></choose-file>
+    </form>
+
+    </div>
+
     
-    </div></span><input accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska,.mkv,.avi,.wmv,.mov,.flv,.webm,.3gp,.3g2,.mts,.m2ts,.vob,.divx,.f4v,.ogv" multiple="" type="file" data-interactable="|click|"><span>
     
-    tu następny
 </body>
 </html>
