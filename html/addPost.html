@@ -1,55 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Add Post</title>
+
     <link rel="stylesheet" href="/resources/css/global.css">
     <link rel="stylesheet" href="/resources/css/navbar.css">
     <link rel="stylesheet" href="/resources/css/addPost.css">
-
-    
 </head>
+
 <body>
+
     <header>
-    <nav class="navbar">
-        <ul>
-            <li>
-                <a href="/index.html">Home</a>
-            </li>
-            <li>
-                <a href="/html/addPost.html">Add Post</a>
-            </li>
-        </ul>
-    </nav>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="/html/addPost.html">Add Post</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    
-    
-    <h1 style="text-align:center;">Post Body</h1>
 
-    <div class="container">
-        
-        <div style="max-width: 300px;">
-            <p>Post body</p>
-        </div>
-        
-        <textarea class="Text_area" placeholder="Textarea"></textarea>
+    <h1 style="text-align: center;">Post Body</h1>
 
-        <div>
-        <p>Select an image to upload</p>
-        <choose-file upload-url="/upload" style=" color: hsl(0, 0%, 100%); border: none; padding: 10px;" placeholder="Choose a file"></choose-file>
-        </div></span><input accept="image/*,image/heif,image/heic,video/*,video/mp4,video/x-m4v,video/x-matroska,.mkv,.avi,.wmv,.mov,.flv,.webm,.3gp,.3g2,.mts,.m2ts,.vob,.divx,.f4v,.ogv" multiple="" type="file" data-interactable="|click|"><span>
-        </span>
-        <form action="/action_page.php">
-        <input type="submit">
-        </div>
-    
-    </form>
 
-    </div>
 
-    
-    
+
+        <form action="/action_page.php" method="post" enctype="multipart/form-data">
+
+            <div class="container">
+
+                <label for="postBody">
+                    Post body
+                </label>
+
+                <textarea
+                    id="postBody"
+                    class="Text_area"
+                    placeholder="Textarea">
+                </textarea>
+
+
+                <label for="image">
+                    Select an image to upload
+                </label>
+
+                <input
+                    id="image"
+                    type="file"
+                    accept="image/*">
+
+
+                <input
+                    type="submit"
+                    value="Create post">
+
+            </div>
+
+        </form>
+
+
+
 </body>
 </html>
