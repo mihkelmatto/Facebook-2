@@ -8,7 +8,6 @@
     <title>Add Post</title>
 
     <link rel="stylesheet" href="/resources/css/global.css">
-    <link rel="stylesheet" href="/resources/css/navbar.css">
     <link rel="stylesheet" href="/resources/css/addPost.css">
 </head>
 
@@ -29,45 +28,46 @@
     </header>
 
 
-    <h1 style="text-align: center;">Post Body</h1>
+    <main>
+        <form class="form"
+            action="/action_page.php"
+            method="post"
+            enctype="multipart/form-data">
 
+            <p class="title">
+                Add post
+            </p>
 
+            <textarea
+                id="post-textarea"
+                class="textarea"
+                placeholder="Textarea">
+            </textarea>
 
+            <p class="subtitle">
+                Select an image to upload
+            </p>
 
-        <form action="/action_page.php" method="post" enctype="multipart/form-data">
+            <label for="image" class="input image-button">
+                choose file
+            </label>
+            <input
+                id="image"
+                type="file"
+                accept="image/*"
+                hidden>
 
-            <div class="container">
-
-                <label for="postBody">
-                    Post body
-                </label>
-
-                <textarea
-                    id="postBody"
-                    class="Text_area"
-                    placeholder="Textarea">
-                </textarea>
-
-
-                <label for="image">
-                    Select an image to upload
-                </label>
-
-                <input
-                    id="image"
-                    type="file"
-                    accept="image/*">
-
-
-                <input
-                    type="submit"
-                    value="Create post">
-
-            </div>
-
+            <label for="submit" class="input submit-button">
+                create post
+            </label>
+            <input
+                type="submit"
+                value="Create post"
+                hidden>
         </form>
+    </main>
+    <footer>
 
-
-
+    </footer>
 </body>
 </html>
