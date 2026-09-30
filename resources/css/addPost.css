@@ -17,8 +17,8 @@ main{
     align-items: center;
     gap: 10px;
 
-    width: 20vw;
-    height: 40vh;
+    width: 20%;
+    height: 60%;
     padding: 15px;
 
     background-color: #635f5f;
@@ -37,8 +37,8 @@ p {
 
 .textarea {
     resize: none;
-    width: 105px;
-    height: 60px;
+    width: 70%;
+    height: 30%;
     padding: 5px;
 
     border-radius: 10px;
@@ -50,7 +50,7 @@ p {
 
 .input{
     width: 40%;
-    padding: 5px;
+    height: 10%;
     text-align: center;
     
     border-radius: 10px;

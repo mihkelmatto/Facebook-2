@@ -14,9 +14,8 @@
     --text-active: hsl(0, 100%, 50%);
 
     /* Measures */
-    --header-height: 8vh;
-    --main-height: 84vh;
-    --footer-height: 8vh;
+    --header-height: 8%;
+    --footer-height: 8%;
 }
 
 /* General */
@@ -25,9 +24,13 @@
 }
 
 body{
+    display: flex;
+    flex-direction: column;
+
     background-color: var(--bg-body);
     font-family: Bahnschrift, Arial;
     color: var(--text-primary);
+
     padding: 0px;
     margin: 0px;
 }
@@ -47,8 +50,14 @@ header, header *{
     background-color: var(--bg-header);
 }
 
+/*
+    flex: grow shrink basis
+    grow = division of extra space
+    shrink = how much space it can give
+    basis = base scaling before shrink    
+*/
 header{
-    height: var(--header-height);
+    flex: 0 1 var(--header-height);
     border-bottom: 1px solid var(--border-primary);
 }
 
@@ -58,7 +67,6 @@ header{
 
 .navbar{
     font-size: 25px; 
-    
 }
 
 .navbar li{
@@ -76,11 +84,14 @@ header{
 }
 
 .navbar a{
+    display: block;
+    width: 175px;
+    height: auto;
+    padding: 15px;
+
     text-decoration: none;
     text-align: center;
-    display: block;
-    padding: 15px;
-    min-width: 175px;
+
     color: var(--text-primary);
 }
 
@@ -95,11 +106,12 @@ header{
 /* Main */
 
 main{
-    min-height: var(--main-height);
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+
     padding: 20px 0px;
 }
 
@@ -111,7 +123,6 @@ footer, footer * {
 }
 
 footer{
-    height: var(--footer-height);
-    display: flex;
+    flex: 0 1 var(--header-height);
     border-top: 1px solid var(--border-primary);
 }

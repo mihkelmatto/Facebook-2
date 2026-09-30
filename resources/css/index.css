@@ -1,6 +1,6 @@
 .contentcard{
     padding: 20px;
-    width: 60vw;
+    width: 60%;
     background-color: var(--bg-content);
     border: 1px solid hsl(0, 0%, 45%);
     border-radius: 30px;
