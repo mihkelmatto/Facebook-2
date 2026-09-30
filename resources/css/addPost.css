@@ -1,4 +1,4 @@
-body{
+body {
     --button-primary: hsl(0, 0%, 22%);
     --button-secondary: hsl(212, 100%, 35%);
 
@@ -6,98 +6,201 @@ body{
     --button-secondary-hover: hsl(212, 100%, 50%);
 }
 
-main{
-    justify-content: center;
-}
 
-.form {
+/* Main */
+main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 
-    width: 20vw;
-    height: 40vh;
-    padding: 15px;
+    width: 100%;
+    padding: 30px 15px;
+    box-sizing: border-box;
+}
+
+
+/* Form */
+.form {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 20px;
+
+    width: min(40vw, 700px);
+    min-height: 40vh;
+    padding: 20px;
 
     background-color: #635f5f;
     border: 1px solid var(--border-primary);
     border-radius: 10px;
+
+    align-items: center;
+    box-sizing: border-box;
 }
 
-p {
+
+/* Descendant selector */
+.form p {
     margin: 0;
 }
 
-.title{
+
+/* Child selector */
+.form > p {
+    text-align: left;
+}
+
+
+.title {
     font-size: 20px;
     font-weight: bold;
 }
 
-.textarea {
-    resize: none;
-    width: 105px;
-    height: 60px;
-    padding: 5px;
 
-    border-radius: 10px;
-}
-
-.subtitle{
+.subtitle {
     font-size: 15px;
 }
 
-.input{
-    width: 40%;
-    padding: 5px;
-    text-align: center;
-    
-    border-radius: 10px;
-    border: 2px solid var(--border-primary);
+
+/* Adjacent sibling selector */
+.title + .textarea {
+    margin-top: 5px;
 }
 
-.image-button{
-    background-color: var(--button-primary);
+
+/* General sibling selector */
+.title ~ .subtitle {
+    font-weight: bold;
 }
 
-.image-button:hover{
-    background-color: var(--button-primary-hover);
-}
 
-.submit-button{
-    background-color: var(--button-secondary);
-}
-
-.submit-button:hover{
-    background-color: var(--button-secondary-hover);
-}
-
-.form {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 20px;
-    align-items: center;
-}
-
-.title {
-    margin: 0;
-    text-align: left;
-}
-
-.subtitle {
-    margin: 0;
-    text-align: left;
-}
-
+/* Textarea */
 .textarea {
     width: 100%;
     min-height: 200px;
+    padding: 8px;
+
     resize: vertical;
+    border-radius: 10px;
+    border: 1px solid var(--border-primary);
+
+    box-sizing: border-box;
 }
 
+
+/* File button container */
 .file-buttons {
     display: flex;
     gap: 10px;
     align-items: center;
+}
+
+
+/* Buttons */
+.input {
+    width: 40%;
+    padding: 7px;
+
+    text-align: center;
+
+    border-radius: 10px;
+    border: 2px solid var(--border-primary);
+
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+/* Choose file */
+.image-button {
+    background-color: var(--button-primary);
+}
+
+
+.image-button:hover {
+    background-color: var(--button-primary-hover);
+}
+
+
+/* Create post */
+.submit-button {
+    background-color: var(--button-secondary);
+    color: white;
+}
+
+
+.submit-button:hover {
+    background-color: var(--button-secondary-hover);
+}
+
+
+/* Tablet */
+@media (max-width: 800px) {
+
+    .form {
+        width: 70vw;
+    }
+
+    .input {
+        width: 60%;
+    }
+}
+
+
+/* Phone */
+@media (max-width: 600px) {
+
+    main {
+        padding: 20px 10px;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 500px;
+
+        min-height: auto;
+        padding: 20px 15px;
+
+        gap: 10px;
+    }
+
+    .form > p {
+        text-align: left;
+    }
+
+    .textarea {
+        width: 100%;
+        min-height: 180px;
+    }
+
+    .file-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .input {
+        width: 100%;
+    }
+}
+
+
+/* Very small phones */
+@media (max-width: 400px) {
+
+    .form {
+        padding: 15px 10px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .textarea {
+        min-height: 150px;
+    }
 }
