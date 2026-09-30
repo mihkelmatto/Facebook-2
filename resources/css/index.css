@@ -1,51 +1,78 @@
-.contentcard{
-    padding: 20px;
-    width: 60%;
-    background-color: var(--bg-content);
-    border: 1px solid hsl(0, 0%, 45%);
-    border-radius: 30px;
-}
+.post{
+    --post-header-height: 60px;
+    --post-footer-height: 40px;
+    --default-padding: 10px 20px;
 
-.contentcard-header{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 10px;
+    flex-direction: column;
 
-    gap: 20px;
-}
+    width: 680px;
+    /* overflow: hidden; */
 
-.contentcard-title{
-    font-size: 25px;
-    font-weight: bold;
-    color: var(--text-hover);
-}
+    border: 1px solid hsl(0, 0%, 45%);
+    border-radius: 10px;
 
-.contentcard-date{
-    margin-left: auto;
-}
+    background-color: var(--bg-content);
 
-.contentcard-picture{
-    display: block;
-    margin: auto;
-    width: 80%;
+    .post-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 10px;
 
-    border-radius: 10px
-}
+        padding: var(--default-padding);
+        
+        height: var(--post-header-height);
+        border-bottom: 1px solid var(--border-primary);
 
-.contentcard-description{
+        .post-profile{
+            display: block;
+            height: 30px;
+            border-radius: 50px;
+        }
 
-}
+        .post-header-textbox{
+            .post-username{
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .post-date{
+                font-size: 12px;
+            }
+        }
+    }
 
-.contentcard-like{
-    height: 30px;
-    width: 30px;
-    padding: 5px;
+    .post-content{        
+        .post-description{
+            padding: var(--default-padding);
+            font-size: 15px;
+        }
+        .post-image{
+            display: block;
+            width: 100%;
+        }
+    }
 
-    border: 2px solid var(--border-primary);
-    border-radius: 12px;
-}
+    .post-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
 
-.contentcard-like:hover{
-    background-color: rgba(255, 255, 255, 0.178);
+        padding: var(--default-padding);
+
+        height: var(--post-footer-height);
+        
+        border-top: 1px solid var(--border-primary);
+        .post-like{
+            display: block;
+            height: 30px;
+            color: white;
+            fill:transparent;
+        }
+        .post-like:hover{
+            fill: var(--text-hover);
+        }
+    }
 }
