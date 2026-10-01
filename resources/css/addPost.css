@@ -1,74 +1,89 @@
 body{
-    --button-primary: hsl(0, 0%, 22%);
-    --button-secondary: hsl(212, 100%, 35%);
+    --button-primary: hsl(210, 79%, 46%);
+    --button-secondary: hsl(0, 0%, 20%);
 
-    --button-primary-hover: hsl(0, 0%, 30%);
-    --button-secondary-hover: hsl(212, 100%, 50%);
+    --button-primary-hover: hsl(210, 79%, 36%);
+    --button-secondary-hover: hsl(0, 0%, 10%);
+    
+    --default-padding: 10px 20px;
 }
 
 main{
     justify-content: center;
 }
 
-.form {
+.addpost{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 20px;
 
-    width: 20%;
-    height: 60%;
-    padding: 15px;
-
-    background-color: #635f5f;
-    border: 1px solid var(--border-primary);
-    border-radius: 10px;
-}
-
-p {
-    margin: 0;
-}
-
-.title{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.textarea {
-    resize: none;
-    width: 70%;
-    height: 30%;
-    padding: 5px;
-
-    border-radius: 10px;
-}
-
-.subtitle{
-    font-size: 15px;
-}
-
-.input{
-    width: 40%;
-    height: 10%;
-    text-align: center;
+    /* overflow: hidden; */
     
+    border: 1px solid var(--border-secondary);
     border-radius: 10px;
-    border: 2px solid var(--border-primary);
-}
+    
+    background-color: var(--bg-content);
+    width: 680px;
+    height: 700px;
 
-.image-button{
-    background-color: var(--button-primary);
-}
+    .addpost-title{
+        font-size: 30px;
+        font-weight: bold;
+    }
 
-.image-button:hover{
-    background-color: var(--button-primary-hover);
-}
+    .addpost-textarea{
+        resize: none;
+        height: 50%;
+        width: 80%;
+        background-color: hsl(0, 0%, 25%);
+        color: var(--text-primary);
 
-.submit-button{
-    background-color: var(--button-secondary);
-}
+        padding: 15px;
+        font-size: 20px;
+        border: 1px solid var(--border-secondary);
+        border-radius: 10px;
+    }
 
-.submit-button:hover{
-    background-color: var(--button-secondary-hover);
+    .addpost-textarea:focus{
+        border: 1px solid var(--border-secondary);
+        outline: none;
+    }
+    
+    .addpost-subtitle{
+        font-size: 25px
+    }
+
+    .button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 35%;
+        height: 7%;
+
+        font-size: 20px;
+
+        border-radius: 10px;
+        border: 1px solid var(--border-secondary);
+    }
+
+    .addpost-file{
+        background-color: var(--button-secondary);
+    }
+
+    .addpost-submit{
+        background-color: var(--button-primary);
+    }
+    
+    .addpost-file:hover{
+        background-color: var(--button-secondary-hover);
+        color: var(--text-hover);
+    }
+
+    .addpost-submit:hover{
+        background-color: var(--button-primary-hover);
+        color: var(--text-hover);
+    }
 }

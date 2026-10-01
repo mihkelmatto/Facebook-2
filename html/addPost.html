@@ -27,28 +27,28 @@
         </nav>
     </header>
 
-
     <main>
-        <form class="form"
+        <form class="addpost"
             action="/action_page.php"
             method="post"
             enctype="multipart/form-data">
 
-            <p class="title">
+            <p class="addpost-title">
                 Add post
             </p>
 
             <textarea
                 id="post-textarea"
-                class="textarea"
-                placeholder="Textarea">
-            </textarea>
+                class="addpost-textarea"
+                placeholder="What's on your mind?"
+            ></textarea>
 
-            <p class="subtitle">
+            <p class="addpost-subtitle">
                 Select an image to upload
             </p>
 
-            <label for="image" class="input image-button">
+            <label for="image" 
+                class="button addpost-file">
                 choose file
             </label>
             <input
@@ -56,8 +56,8 @@
                 type="file"
                 accept="image/*"
                 hidden>
-
-            <label for="submit" class="input submit-button">
+            <label for="submit"
+                class="button addpost-submit">
                 create post
             </label>
             <input
@@ -66,8 +66,9 @@
                 hidden>
         </form>
     </main>
+
     <footer>
-        <label>this is a footer</label>
+
     </footer>
 </body>
 </html>

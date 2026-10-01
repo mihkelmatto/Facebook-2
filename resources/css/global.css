@@ -6,6 +6,7 @@
 
     /* border */
     --border-primary: hsl(0, 0%, 45%);
+    --border-secondary: hsl(0, 0%, 30%);
 
     /* text color*/
     --text-primary: hsl(0, 0%, 100%);

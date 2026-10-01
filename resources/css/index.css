@@ -9,7 +9,7 @@
     width: 680px;
     /* overflow: hidden; */
 
-    border: 1px solid hsl(0, 0%, 45%);
+    border: 1px solid var(--border-secondary);
     border-radius: 10px;
 
     background-color: var(--bg-content);
@@ -24,7 +24,7 @@
         padding: var(--default-padding);
         
         height: var(--post-header-height);
-        border-bottom: 1px solid var(--border-primary);
+        border-bottom: 1px solid var(--border-secondary);
 
         .post-profile{
             display: block;
@@ -60,11 +60,11 @@
         justify-content: left;
         align-items: center;
 
-        padding: var(--default-padding);
-
         height: var(--post-footer-height);
         
-        border-top: 1px solid var(--border-primary);
+        padding: var(--default-padding);
+        border-top: 1px solid var(--border-secondary);
+
         .post-like{
             display: block;
             height: 30px;
