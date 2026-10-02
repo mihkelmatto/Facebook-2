@@ -25,7 +25,7 @@ main{
     border-radius: 10px;
     
     background-color: var(--bg-content);
-    width: 680px;
+    width: min(680px, 90%);
     height: 700px;
 
     .addpost-title{
@@ -63,7 +63,7 @@ main{
         width: 35%;
         height: 7%;
 
-        font-size: 20px;
+        font-size: min(20px, 90%);
 
         border-radius: 10px;
         border: 1px solid var(--border-secondary);
