@@ -1,9 +1,11 @@
 body{
     --button-primary: hsl(210, 79%, 46%);
     --button-secondary: hsl(0, 0%, 20%);
-
     --button-primary-hover: hsl(210, 79%, 36%);
     --button-secondary-hover: hsl(0, 0%, 10%);
+
+    --addpost-header-height: 1lh;
+    --addpost-footer-height: 15%;
     
     --default-padding: 10px 20px;
 }
@@ -17,7 +19,6 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
 
     /* overflow: hidden; */
     
@@ -29,61 +30,79 @@ main{
     height: 700px;
 
     .addpost-title{
-        font-size: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-width: max-content;
+        height: var(--addpost-header-height);
+
+        font-size: 35px;
+        line-height: 2.5;
         font-weight: bold;
     }
 
     .addpost-textarea{
         resize: none;
-        height: 50%;
-        width: 80%;
-        background-color: hsl(0, 0%, 25%);
-        color: var(--text-primary);
-
+        width: 100%;
+        height: calc(100% - var(--addpost-header-height) - var(--addpost-footer-height));
         padding: 15px;
+        
+        border-color: var(--border-secondary);
+        border-width: 1px 0;
+        
+        background-color: transparent;
+        color: var(--text-primary);
         font-size: 20px;
-        border: 1px solid var(--border-secondary);
-        border-radius: 10px;
     }
 
     .addpost-textarea:focus{
-        border: 1px solid var(--border-secondary);
         outline: none;
     }
-    
-    .addpost-subtitle{
-        font-size: 25px
-    }
 
-    .button{
+    .addpost-buttons{
         display: flex;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+        gap: 10px;
+        
+        height: var(--addpost-footer-height);
+        width: 100%;
 
-        width: 35%;
-        height: 7%;
-
-        font-size: min(20px, 90%);
-
-        border-radius: 10px;
-        border: 1px solid var(--border-secondary);
-    }
-
-    .addpost-file{
-        background-color: var(--button-secondary);
-    }
-
-    .addpost-submit{
-        background-color: var(--button-primary);
-    }
+        .button{
+            height: 55%;
+        }
+        
+        .addpost-file{
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+        }
+        
+        .addpost-submit{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            min-width: max-content;
+            
+            padding: var(--default-padding);
+            border-radius: 10px;
     
-    .addpost-file:hover{
-        background-color: var(--button-secondary-hover);
-        color: var(--text-hover);
-    }
+            background-color: var(--button-primary);
+            font-size: min(20px, 90%);
+        }
+        
+        .addpost-file:hover{
+            color: var(--text-hover);
+            cursor: pointer;
+        }
+    
+        .addpost-submit:hover{
+            background-color: var(--button-primary-hover);
+            color: var(--text-hover);
+            cursor: pointer;
+        }
 
-    .addpost-submit:hover{
-        background-color: var(--button-primary-hover);
-        color: var(--text-hover);
     }
 }

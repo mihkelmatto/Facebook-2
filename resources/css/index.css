@@ -29,7 +29,7 @@
         .post-profile{
             display: block;
             height: 30px;
-            border-radius: 50px;
+            border-radius: 50%;
         }
 
         .post-header-textbox{
@@ -43,7 +43,7 @@
         }
     }
 
-    .post-content{        
+    .post-content{
         .post-description{
             padding: var(--default-padding);
             font-size: 15px;
