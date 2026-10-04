@@ -1,3 +1,4 @@
+
 body {
     --button-primary: hsl(210, 79%, 46%);
     --button-primary-hover: hsl(210, 79%, 36%);
@@ -19,6 +20,8 @@ main {
     justify-content: center;
     gap: 15px;
 
+    box-sizing: border-box;
+
     border: 1px solid var(--border-secondary);
     border-radius: 10px;
 
@@ -26,110 +29,189 @@ main {
 
     width: min(680px, 90%);
     min-height: 500px;
-
     padding: 30px;
+}
 
-    .login-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    
-        width: 100%;
-        
-        font-size: 35px;
-        line-height: 1.5;
-        font-weight: bold;
+.login-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    font-size: 35px;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.login-form > label {
+    width: 100%;
+    font-size: 18px;
+}
+
+.login-form > input {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 50px;
+    padding: 10px 15px;
+
+    border: 1px solid var(--border-secondary);
+    border-radius: 10px;
+
+    background-color: transparent;
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.login-form > input:focus {
+    outline: none;
+    border-color: var(--button-primary);
+}
+
+/* Password */
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    display: block;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 50px;
+    padding: 10px 45px 10px 15px;
+
+    border: 1px solid var(--border-secondary);
+    border-radius: 10px;
+
+    background-color: transparent;
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 18px;
+}
+
+.password-container input:focus {
+    outline: none;
+    border-color: var(--button-primary);
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    border: none;
+
+    background: transparent;
+    color: var(--text-primary);
+
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: var(--text-hover);
+}
+
+/* Buttons */
+
+.buttonsbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    margin-top: 15px;
+}
+
+.buttonsbox .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    width: 50%;
+    min-width: 0;
+    min-height: 55px;
+
+    padding: var(--default-padding);
+
+    border: none;
+    border-radius: 10px;
+
+    color: var(--text-primary);
+
+    font-family: inherit;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.login-button {
+    background-color: var(--button-primary);
+}
+
+.login-button:hover {
+    background-color: var(--button-primary-hover);
+    color: var(--text-hover);
+}
+
+.register-button {
+    background-color: var(--button-secondary);
+}
+
+.register-button:hover {
+    background-color: var(--button-secondary-hover);
+    color: var(--text-hover);
+}
+
+/* Forgot password */
+
+.forgot-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    padding: 10px;
+
+    color: var(--text-link);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    color: var(--text-hover);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 20px;
     }
-    
-    > label {
-        width: 100%;    
-        font-size: 18px;
-    }
-    
-    label + input {
-        width: 100%;
-        height: 50px;
-    
-        padding: 10px 15px;
-    
-        border: 1px solid var(--border-secondary);
-        border-radius: 10px;
-    
-        background-color: transparent;
-        color: var(--text-primary);
-    
-        font-size: 18px;
-    }
-    
-    input:focus {
-        outline: none;
-        border-color: var(--button-primary);
+
+    .buttonsbox {
+        gap: 10px;
     }
 
-    .buttonsbox{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-
-        width: 100%;
-        margin-top: 15px;
-
-        .button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        
-            width: 50%;
-            min-width: max-content;
-            height: 55px;
-        
-            padding: var(--default-padding);
-        
-            border: none;
-            border-radius: 10px;
-        
-            color: var(--text-primary);
-            
-            font-family: inherit;
-            font-size: 20px;
-
-            cursor: pointer;
-        }
-        
-        .login-button {
-            background-color: var(--button-primary);
-        }
-        
-        .login-button:hover {
-            background-color: var(--button-primary-hover);
-            color: var(--text-hover);
-        }
-
-        .register-button{
-            background-color: var(--button-secondary);
-        }
-
-        .register-button:hover{
-            background-color: var(--button-secondary-hover);
-            color: var(--text-hover);
-        }
-    }
-
-    .buttonsbox ~ .forgot-password{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        cursor: pointer;
-
-        width: max-content;
+    .buttonsbox .button {
         padding: 10px;
-    }
-
-    .forgot-password:hover{
-        color: var(--text-hover);
+        font-size: 16px;
     }
 }
 
