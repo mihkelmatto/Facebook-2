@@ -1,0 +1,78 @@
+.post{
+    --post-header-height: 60px;
+    --post-footer-height: 40px;
+    --default-padding: 10px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(680px, 90%);
+    /* overflow: hidden; */
+
+    border: 1px solid var(--border-secondary);
+    border-radius: 10px;
+
+    background-color: var(--bg-content);
+
+    .post-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap: 10px;
+
+        padding: var(--default-padding);
+        
+        height: var(--post-header-height);
+        border-bottom: 1px solid var(--border-secondary);
+
+        .post-profile{
+            display: block;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .post-header-textbox{
+            .post-username{
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .post-date{
+                font-size: 12px;
+            }
+        }
+    }
+
+    .post-content{
+        .post-description{
+            padding: var(--default-padding);
+            font-size: 15px;
+        }
+        .post-image{
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .post-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+
+        height: var(--post-footer-height);
+        
+        padding: var(--default-padding);
+        border-top: 1px solid var(--border-secondary);
+
+        .post-like{
+            display: block;
+            height: 30px;
+            color: white;
+            fill:transparent;
+        }
+        .post-like:hover{
+            fill: var(--text-hover);
+        }
+    }
+}

@@ -27,7 +27,7 @@ main{
     
     background-color: var(--bg-content);
     width: min(680px, 90%);
-    height: 700px;
+    height: 650px;
 
     .addpost-title{
         display: flex;

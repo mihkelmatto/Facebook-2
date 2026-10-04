@@ -1,78 +1,135 @@
-.post{
-    --post-header-height: 60px;
-    --post-footer-height: 40px;
-    --default-padding: 10px 20px;
+body {
+    --button-primary: hsl(210, 79%, 46%);
+    --button-primary-hover: hsl(210, 79%, 36%);
 
+    --button-secondary: hsl(0, 0%, 15%);
+    --button-secondary-hover: hsl(0, 0%, 10%);
+
+    --default-padding: 10px 20px;
+}
+
+main {
+    justify-content: center;
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
-
-    width: min(680px, 90%);
-    /* overflow: hidden; */
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 
     border: 1px solid var(--border-secondary);
     border-radius: 10px;
 
     background-color: var(--bg-content);
 
-    .post-header{
+    width: min(680px, 90%);
+    min-height: 500px;
+
+    padding: 30px;
+
+    .login-title {
         display: flex;
-        flex-direction: row;
-        justify-content: left;
         align-items: center;
-        gap: 10px;
-
-        padding: var(--default-padding);
+        justify-content: center;
+    
+        width: 100%;
         
-        height: var(--post-header-height);
-        border-bottom: 1px solid var(--border-secondary);
-
-        .post-profile{
-            display: block;
-            height: 30px;
-            border-radius: 50%;
-        }
-
-        .post-header-textbox{
-            .post-username{
-                font-size: 15px;
-                font-weight: bold;
-            }
-            .post-date{
-                font-size: 12px;
-            }
-        }
+        font-size: 35px;
+        line-height: 1.5;
+        font-weight: bold;
+    }
+    
+    > label {
+        width: 100%;    
+        font-size: 18px;
+    }
+    
+    label + input {
+        width: 100%;
+        height: 50px;
+    
+        padding: 10px 15px;
+    
+        border: 1px solid var(--border-secondary);
+        border-radius: 10px;
+    
+        background-color: transparent;
+        color: var(--text-primary);
+    
+        font-size: 18px;
+    }
+    
+    input:focus {
+        outline: none;
+        border-color: var(--button-primary);
     }
 
-    .post-content{
-        .post-description{
+    .buttonsbox{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        width: 100%;
+        margin-top: 15px;
+
+        .button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            width: 50%;
+            min-width: max-content;
+            height: 55px;
+        
             padding: var(--default-padding);
-            font-size: 15px;
+        
+            border: none;
+            border-radius: 10px;
+        
+            color: var(--text-primary);
+            
+            font-family: inherit;
+            font-size: 20px;
+
+            cursor: pointer;
         }
-        .post-image{
-            display: block;
-            width: 100%;
+        
+        .login-button {
+            background-color: var(--button-primary);
+        }
+        
+        .login-button:hover {
+            background-color: var(--button-primary-hover);
+            color: var(--text-hover);
+        }
+
+        .register-button{
+            background-color: var(--button-secondary);
+        }
+
+        .register-button:hover{
+            background-color: var(--button-secondary-hover);
+            color: var(--text-hover);
         }
     }
 
-    .post-footer{
+    .buttonsbox ~ .forgot-password{
         display: flex;
-        flex-direction: row;
-        justify-content: left;
         align-items: center;
+        justify-content: center;
 
-        height: var(--post-footer-height);
-        
-        padding: var(--default-padding);
-        border-top: 1px solid var(--border-secondary);
+        cursor: pointer;
 
-        .post-like{
-            display: block;
-            height: 30px;
-            color: white;
-            fill:transparent;
-        }
-        .post-like:hover{
-            fill: var(--text-hover);
-        }
+        width: max-content;
+        padding: 10px;
+    }
+
+    .forgot-password:hover{
+        color: var(--text-hover);
     }
 }
+
