@@ -115,6 +115,10 @@ header{
     color: var(--text-active);
 }
 
+.navbar ul .active{
+    color: red;
+}
+
 /* Main */
 
 main{
