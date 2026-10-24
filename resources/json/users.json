@@ -1,37 +1,32 @@
-[
-    {
-        "id": 1,
+{
+    "1": {
         "email": "",
         "username": "Tom Marvolo Riddle",
         "password": "",
         "profile_img_path": "img/userprofile/1"
     },
-    {
-        "id": 2,
+    "2": {
         "email": "",
         "username": "Albus Percival Wulfric Brian Dumbledore",
         "password": "",
         "profile_img_path": "img/userprofile/2"
     },
-    {
-        "id": 3,
+    "3": {
         "email": "",
         "username": "Severus Snape",
         "password": "",
         "profile_img_path": "img/userprofile/3"
     },
-    {
-        "id": 4,
+    "4": {
         "email": "",
         "username": "Bellatrix Lestrange",
         "password": "",
         "profile_img_path": "img/userprofile/4"
     },
-    {
-        "id": 5,
+    "5": {
         "email": "",
         "username": "Sirius Black",
         "password": "",
         "profile_img_path": "img/userprofile/5"
     }
-]
+}

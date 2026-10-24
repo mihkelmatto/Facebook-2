@@ -59,6 +59,7 @@
         flex-direction: row;
         justify-content: left;
         align-items: center;
+        gap: 5px;
 
         height: var(--post-footer-height);
         
@@ -71,8 +72,13 @@
             color: white;
             fill:transparent;
         }
-        .post-like:hover{
+        .post-like:hover, .liked{
             fill: var(--text-hover);
+        }
+        .likecount{
+            font-weight: bold;
+            position: relative;
+            top: 3px;
         }
     }
 }

@@ -1,10 +1,10 @@
 [
     {
-        "post-id": 1,
-        "user-id": 3
+        "postid": 1,
+        "userid": 3
     },
     {
-        "post-id": 5,
-        "user-id": 1
+        "postid": 5,
+        "userid": 1
     }
 ]
