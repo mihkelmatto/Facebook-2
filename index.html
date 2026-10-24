@@ -10,12 +10,102 @@
 
     <link rel="stylesheet" href="resources/css/global.css">
     <link rel="stylesheet" href="resources/css/index.css">
+
+    <script src="resources/js/script.js" defer></script>
 </head>
 
 <body>
 
-    <script src="resources/js/script.js"></script>
+    <main>
+
+        <form
+            class="login-form"
+            action="html/home.html"
+            method="get">
+
+            <p class="login-title">
+                Login
+            </p>
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                id="email"
+                type="email"
+                name="email"
+                required>
+
+            <label for="password">
+                Password
+            </label>
+
+            <div class="password-container">
+
+                <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    required>
+
+                <button
+                    type="button"
+                    class="password-toggle"
+                    id="togglePassword"
+                    aria-label="Show password"
+                    aria-pressed="false">
+
+                    <svg
+                        id="eyeIcon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
+                        <circle cx="12" cy="12" r="3"/>
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+            <div class="buttonsbox">
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="register"
+                    class="button register-button">
+                    Register
+                </button>
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="login"
+                    class="button login-button">
+                    Login
+                </button>
+
+            </div>
+
+            <a
+                href="html/forgotPassword.html"
+                class="forgot-password">
+                Forgot password?
+            </a>
+
+        </form>
+
+    </main>
 
 </body>
 </html>
-
