@@ -27,6 +27,6 @@ fetch(ROOT_DIR + "/html/header.html")
         header.querySelector("ul").children[i].querySelector("a").classList.add("active");
 
 
-        document.body.prepend(header);
+        document.querySelector("header").replaceWith(header);
     })
     .catch(error => console.error(error));
