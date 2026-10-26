@@ -1,6 +1,5 @@
-import { ROOT_DIR } from "../config.js";
+import { ROOT_DIR, getUserImg } from "../config.js";
 import { readhtml, readjson } from "./utils/filereader.js";
-import { getProfPath } from "./home.js";
 
 // format: xxxx.html
 const header = await readhtml(ROOT_DIR + "html/components/header.html");
@@ -25,7 +24,7 @@ async function initDropdown(){
     });
 
     const profimg = dropdown.querySelector(".profileimg");
-    profimg.src = await getProfPath(currentUID);
+    profimg.src = await getUserImg(currentUID);
 
     const logout = dropdowncontent.querySelector("#logout");
     logout.href = ROOT_DIR + "index.html";

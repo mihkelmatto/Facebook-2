@@ -81,5 +81,8 @@
             position: relative;
             top: 3px;
         }
+        .likecount.iszero{
+            display: none;
+        }
     }
 }

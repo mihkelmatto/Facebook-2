@@ -1,128 +1,62 @@
-import { ROOT_DIR } from "../config.js";
-import { readhtml, readjson, fileExists} from "./utils/filereader.js";
+import { ROOT_DIR, getUserImg, getPostImg } from "../config.js";
+import { readhtml } from "./utils/filereader.js";
+import { formatDate } from "./utils/formatting.js";
+import { Session } from "./utils/session.js";
+
+
+
+const session = new Session();
+await session.init();
 
 const main = document.querySelector("main");
 const postHTMLtemplate = await readhtml(ROOT_DIR + "html/components/post.html");
 
-const postdata = await readjson(ROOT_DIR + "resources/json/posts.json");
-const userdata = await readjson(ROOT_DIR + "resources/json/users.json");
-const likedata = await readjson(ROOT_DIR + "resources/json/post_likes.json");
-
-const currentUID = 1; // TODO
-
-for(let p of postdata){
-    main.append(await getPostHTML(p));
+for(let post of session.getPostsData()){
+    main.append(await getPostHTML(post));
 }
 
-async function getPostHTML(p){
+async function getPostHTML(post){
     const postHTML = postHTMLtemplate.cloneNode(true);
-    const owner = userdata[p.userid];
 
+    // DOM-objects
+    const userimg = postHTML.querySelector(".post-profile");
+    const username = postHTML.querySelector(".post-username");
+    const postdate = postHTML.querySelector(".post-date");
+    
+    const postdescription = postHTML.querySelector(".post-description");
+    const postimg = postHTML.querySelector(".post-image");
     const likebutton = postHTML.querySelector(".post-like");
-    let [liked, likecount] = countLikes(p.id);
+    const likecounter = postHTML.querySelector(".likecount");
     
-    // post-header
-    postHTML.querySelector(".post-profile").src = await getProfPath(p.userid);
-    postHTML.querySelector(".post-username").textContent = owner.username;
-    postHTML.querySelector(".post-date").textContent = formatDate(p.time_created);
+
+    // Setting content values
+    userimg.src = await getUserImg(post.userid);
+    username.textContent = session.getUsername(post.userid);
+    postdate.textContent = formatDate(post.time_created);
     
-    // post-content
-    postHTML.querySelector(".post-description").textContent = p.description;
-    postHTML.querySelector(".post-image").src = await getPostImgPath(p.id);
+    postdescription.textContent = post.description;
+    postimg.src = await getPostImg(post.id);
 
-    // post-footer
-    if(liked){
-        likebutton.classList.add("liked");
-    }
-    if(likecount > 0){
-        postHTML.querySelector(".likecount").textContent = likecount;
+    
+    // Like button & likecount
+    let [isLiked, count] = session.countLikes(post.id);
+
+    function updateLikes(){
+        likebutton.classList.toggle("liked", isLiked);
+        likecounter.textContent = count;
+        likecounter.classList.toggle("iszero", count === 0);
     }
 
-    // Listeners
+    updateLikes();
+    
     likebutton.addEventListener("click", e => {
         e.preventDefault();
 
-        const likeCountLabel = likebutton.closest(".post-footer").querySelector(".likecount");
-        const liked = likebutton.classList.toggle("liked");
+        isLiked = !isLiked;
+        count = Math.max(0, count + (isLiked ? 1 : -1));
 
-        let count = Number(likeCountLabel.textContent) || 0;
-        count = (liked) ? count + 1 : count - 1;
-
-        likeCountLabel.textContent = (count > 0) ? count : "";
+        updateLikes();
     });
 
     return postHTML;
-}
-
-    /*
-        Returns a date in following format:
-        - locale: en-GB
-        - 21 October 2026 at 14:45
-    */
-
-function formatDate(timestamp){
-    return new Date(timestamp).toLocaleString("en-GB", {
-        day: "2-digit",
-        month: "long",
-        year: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false
-    });
-}
-
-    /*
-        returns the path for user's profile image
-        - all images have to be jpg
-        - img name = userid
-        - default: profile-icon.jpg
-    */
-
-export async function getProfPath(userid){
-    const BASE_PATH = `${ROOT_DIR}resources/images/profile/`;
-    let profPath = `${BASE_PATH}${userid}.jpg`;
-
-    if(!(await fileExists(profPath))){
-        profPath = `${BASE_PATH}profile-icon.jpg`;
-    }
-
-    return profPath;
-}
-
-    /*
-        returns the path for post's image
-        - all images have to be jpg
-        - img name = postid
-    */
-
-async function getPostImgPath(postid){
-    const BASE_PATH = ROOT_DIR + "resources/images/posts/";
-    let pImgPath = `${BASE_PATH}${postid}.jpg`
-
-    if(!(await fileExists(pImgPath))){
-        pImgPath = "";
-    }
-
-    return pImgPath;
-}
-    /*
-        Returns a list [boolean liked, int likecount]
-        - liked: true if the current user has liked the post
-        - likecount: post's like count from all users
-    */
-
-function countLikes(postid){
-    let likecount = 0;
-    let liked = false;
-    
-    for(let rel of likedata){
-        if(rel.postid == postid){
-            if(rel.userid == currentUID){
-                liked = true;
-            }
-            likecount++;
-        }
-    }
-    
-    return [liked, likecount];
 }

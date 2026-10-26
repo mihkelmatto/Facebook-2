@@ -18,3 +18,8 @@
 
 Do not forget to push all your changes to your repository.  
 At least one “commit” from every team member. 
+
+
+###
+home.js: integrate refreshlikes() to session
+Session.js: use actual uid
