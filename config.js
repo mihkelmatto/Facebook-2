@@ -1,1 +1,1 @@
-export const ROOT_DIR = new URL("../", import.meta.url).href;
+export const ROOT_DIR = new URL("./", import.meta.url).href;

@@ -1,30 +1,30 @@
 {
     "1": {
-        "email": "",
+        "email": "tom@gmail.com",
         "username": "Tom Marvolo Riddle",
         "password": "",
         "profile_img_path": "img/userprofile/1"
     },
     "2": {
-        "email": "",
+        "email": "albus@gmail.com",
         "username": "Albus Percival Wulfric Brian Dumbledore",
         "password": "",
         "profile_img_path": "img/userprofile/2"
     },
     "3": {
-        "email": "",
+        "email": "severus@gmail.com",
         "username": "Severus Snape",
         "password": "",
         "profile_img_path": "img/userprofile/3"
     },
     "4": {
-        "email": "",
+        "email": "bellatrix@gmail.com",
         "username": "Bellatrix Lestrange",
         "password": "",
         "profile_img_path": "img/userprofile/4"
     },
     "5": {
-        "email": "",
+        "email": "sirius@gmail.com",
         "username": "Sirius Black",
         "password": "",
         "profile_img_path": "img/userprofile/5"

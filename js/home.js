@@ -2,11 +2,11 @@ import { ROOT_DIR } from "../config.js";
 import { readhtml, readjson, fileExists} from "./utils/filereader.js";
 
 const main = document.querySelector("main");
-const postHTMLtemplate = await readhtml(ROOT_DIR + "/html/components/post.html");
+const postHTMLtemplate = await readhtml(ROOT_DIR + "html/components/post.html");
 
-const postdata = await readjson(ROOT_DIR + "/resources/json/posts.json");
-const userdata = await readjson(ROOT_DIR + "/resources/json/users.json");
-const likedata = await readjson(ROOT_DIR + "/resources/json/post_likes.json");
+const postdata = await readjson(ROOT_DIR + "resources/json/posts.json");
+const userdata = await readjson(ROOT_DIR + "resources/json/users.json");
+const likedata = await readjson(ROOT_DIR + "resources/json/post_likes.json");
 
 const currentUID = 1; // TODO
 
@@ -78,8 +78,8 @@ function formatDate(timestamp){
         - default: profile-icon.jpg
     */
 
-async function getProfPath(userid){
-    const BASE_PATH = `${ROOT_DIR}/resources/images/profile/`;
+export async function getProfPath(userid){
+    const BASE_PATH = `${ROOT_DIR}resources/images/profile/`;
     let profPath = `${BASE_PATH}${userid}.jpg`;
 
     if(!(await fileExists(profPath))){
@@ -96,7 +96,7 @@ async function getProfPath(userid){
     */
 
 async function getPostImgPath(postid){
-    const BASE_PATH = ROOT_DIR + "/resources/images/posts/";
+    const BASE_PATH = ROOT_DIR + "resources/images/posts/";
     let pImgPath = `${BASE_PATH}${postid}.jpg`
 
     if(!(await fileExists(pImgPath))){
