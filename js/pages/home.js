@@ -42,22 +42,26 @@ export async function main(session) {
     
         
         // Like button & likecount
-        let [isLiked, count] = session.countLikes(post.id);
-    
+   
         function updateLikes(){
+            const count = session.getLikes(post.id);
+            const isLiked = session.getIsLiked(post.id);
+
             likebutton.classList.toggle("liked", isLiked);
             likecounter.textContent = count;
             likecounter.classList.toggle("iszero", count === 0);
         }
-    
-        updateLikes();
         
+        updateLikes();
+
+        let liked = likebutton.classList.contains("liked");
+
         likebutton.addEventListener("click", e => {
             e.preventDefault();
-    
-            isLiked = !isLiked;
-            count = Math.max(0, count + (isLiked ? 1 : -1));
-    
+
+            liked = !liked;
+            session.setLiked(post.id, liked);
+            
             updateLikes();
         });
     

@@ -21,5 +21,4 @@ At least one “commit” from every team member.
 
 
 ###
-home.js: integrate refreshlikes() to session
 Session.js: use actual uid
