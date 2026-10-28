@@ -5,7 +5,7 @@ export const ROOT_DIR = new URL("./", import.meta.url).href;
 export const IMG_DIR = ROOT_DIR + "resources/images/"
 export const CSS_DIR = ROOT_DIR + "resources/css/"
 export const JSON_DIR = ROOT_DIR + "resources/json/"
-
+export const JS_DIR = ROOT_DIR + "js/";
 
 
 
