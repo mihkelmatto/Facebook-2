@@ -22,6 +22,26 @@ export class Session{
 
     }
 
+    save() {
+        sessionStorage.setItem("session", JSON.stringify({
+            usersData: this.#usersData,
+            postsData: this.#postsData,
+            postLikeData: this.#postLikeData,
+            activeUID: this.#activeUID
+        }));
+    }
+
+    restore() {
+        const data = JSON.parse(
+            sessionStorage.getItem("session")
+        );
+
+        this.#usersData = data.usersData;
+        this.#postsData = data.postsData;
+        this.#postLikeData = data.postLikeData;
+        this.#activeUID = data.activeUID;
+    }
+
     /*
         Posts
     */

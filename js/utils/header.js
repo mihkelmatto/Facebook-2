@@ -2,7 +2,29 @@ import { ROOT_DIR, CSS_DIR, getUserImg } from "../../config.js";
 import { readhtml, readjson } from "./filereader.js";
 import { applyCss } from "./utils.js";
 
-export async function main(activeUID){
+/*
+    Replaces navbar's navigation with session.navigate
+
+    Prerequisites:
+    - Header has to be in DOM before calling this function
+    - Every link has to have href=page.html
+    - prerequisites of session.navigate()
+*/
+export function initNavigation(navigate){
+    const nav = document.querySelector(".navbar ul");
+
+    for(let li of nav.children){
+        const a = li.querySelector("a");
+        a.addEventListener("click", e => {
+            e.preventDefault();
+            const newpage = a.getAttribute("href");
+            navigate(newpage);
+        });
+    }
+}
+
+export async function main(session){
+    const activeUID = session.getActiveUID();
     applyCss(CSS_DIR + "header.css");
 
     // format: xxxx.html

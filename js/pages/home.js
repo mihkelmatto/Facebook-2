@@ -61,6 +61,7 @@ export async function main(session) {
 
             liked = !liked;
             session.setLiked(post.id, liked);
+            session.save();
             
             updateLikes();
         });
