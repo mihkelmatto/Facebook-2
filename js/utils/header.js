@@ -1,5 +1,5 @@
 import { ROOT_DIR, CSS_DIR, getUserImg } from "../../config.js";
-import { readhtml, readjson } from "./filereader.js";
+import { readhtml, readjson } from "./files.js";
 import { applyCss } from "./utils.js";
 
 /*

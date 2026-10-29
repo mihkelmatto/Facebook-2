@@ -39,10 +39,12 @@ async function loadPage(){
     const currentPage = window.location.pathname
         .split("/").pop()
         .split(".")[0];
+    
+    let modulePath;
 
     try{
         // loads the JS-script
-        const modulePath = `${JS_DIR}pages/${currentPage}.js`;
+        modulePath = `${JS_DIR}pages/${currentPage}.js`;
 
         const pageModule = await import(modulePath);
         await pageModule.main(session);
@@ -52,7 +54,7 @@ async function loadPage(){
         document.body.classList.toggle("init", false);
     }
     catch(error){
-        console.error(`Page script failed: ${modulePath}`);
+        console.error(`Page script failed: ${modulePath} \n${error}`);
     }
 }
 

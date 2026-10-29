@@ -1,5 +1,5 @@
-import { JSON_DIR } from "../../config.js";
-import { readjson } from "./filereader.js";
+import { JSON_DIR, USE_API } from "../../config.js";
+import { readjson } from "./files.js";
 
 export class Session{
     #usersData;
@@ -19,16 +19,18 @@ export class Session{
         this.#usersData = await readjson(JSON_DIR + "users.json");
         this.#postsData = await readjson(JSON_DIR + "posts.json");
         this.#postLikeData = await readjson(JSON_DIR + "post_likes.json");
-
     }
 
     save() {
-        sessionStorage.setItem("session", JSON.stringify({
+        const sessionData = JSON.stringify({
             usersData: this.#usersData,
             postsData: this.#postsData,
             postLikeData: this.#postLikeData,
             activeUID: this.#activeUID
-        }));
+        })
+        
+        // sessionStorage.setItem("session", sessionData);
+
     }
 
     restore() {
