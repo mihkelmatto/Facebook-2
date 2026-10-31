@@ -30,31 +30,31 @@
         "description": "Sirius Black III (03.11.1959 - 18.06.1996), also known as Padfoot or Snuffles (in his Animagus form), was an English pure-blood wizard, the eldest son of Orion and Walburga Black, the older brother of Regulus Black, and godfather of Harry Potter. Although he was the heir of the House of Black, Sirius disagreed with his family's belief in blood purity and defied tradition when he was Sorted into Gryffindor House instead of Slytherin at Hogwarts School of Witchcraft and Wizardry, which he attended from 1971 to 1978. As the rest of his family had been in Slytherin, he was the odd one out."
     },
     {
-        "id": "6",
+        "id": 6,
         "userid": 6,
         "time_created": "2026-10-19T09:00:00.000Z",
         "description": "Harry James Potter (31.07.1980 –), also known as the Boy Who Lived or the Chosen One, was an English half-blood wizard, the only son of James and Lily Potter, and the godson of Sirius Black. After his parents were murdered by Lord Voldemort when he was just a baby, Harry was raised by his Muggle relatives, the Dursleys. He attended Hogwarts School of Witchcraft and Wizardry from 1991 to 1998, where he was Sorted into Gryffindor House. Despite being famous in the wizarding world for surviving the Killing Curse as an infant, Harry grew up facing numerous challenges, eventually becoming one of the most important figures in the Second Wizarding War."
     },
     {
-        "id": "7",
+        "id": 7,
         "userid": 7,
         "time_created": "2026-10-19T09:00:00.000Z",
         "description": "Hermione Jean Granger (19.09.1979 –), was an English Muggle-born witch, the only daughter of Mr and Mrs Granger, both Muggle dentists, and one of Harry Potter's closest friends. She attended Hogwarts School of Witchcraft and Wizardry from 1991 to 1998, where she was Sorted into Gryffindor House. Known for her exceptional intelligence, love of books and remarkable magical abilities, Hermione quickly became one of the brightest students of her year. Despite facing prejudice because of her Muggle-born heritage, she played a crucial role in the fight against Lord Voldemort during the Second Wizarding War."
     },
     {
-        "id": "8",
+        "id": 8,
         "userid": 8,
         "time_created": "2026-10-19T09:00:00.000Z",
         "description": "Ronald Bilius Weasley (01.03.1980 –), also known as Ron, was an English pure-blood wizard, the sixth son of Arthur and Molly Weasley, the younger brother of Bill, Charlie, Percy, Fred and George Weasley, and the older brother of Ginny Weasley. He was one of Harry Potter's closest friends and Hermione Granger's future husband. He attended Hogwarts School of Witchcraft and Wizardry from 1991 to 1998, where he was Sorted into Gryffindor House. Coming from a large and loving wizarding family, Ron often struggled with feelings of insecurity and living in the shadow of his older brothers. Despite this, he proved himself to be a brave and loyal friend, playing an important role in the fight against Lord Voldemort during the Second Wizarding War."
     },
     {
-        "id": "9",
+        "id": 9,
         "userid": 9,
         "time_created": "2026-10-19T09:00:00.000Z",
         "description": "Draco Lucius Malfoy (05.06.1980 –), was an English pure-blood wizard, the only son of Lucius and Narcissa Malfoy, the older brother of Scorpius Malfoy, and a former student at Hogwarts School of Witchcraft and Wizardry. He was Sorted into Slytherin House and became a prominent member of the Slytherin community. Draco was known for his arrogance, cunning nature, and strong belief in blood purity. Despite his initial antagonism towards Harry Potter and his friends, Draco's character evolved over time, especially during the Second Wizarding War, where he faced moral dilemmas and the consequences of his family's allegiance to Lord Voldemort."
     },
     {
-        "id": "10",
+        "id": 10,
         "userid": 10,
         "time_created": "2026-10-19T09:00:00.000Z",
         "description": "Nagini (before 1927 – 02.05.1998) was a female Maledictus who could transform into a giant snake. Originally a human woman, she was cursed with blood magic that eventually trapped her permanently in her serpent form. She became one of Lord Voldemort's most loyal companions and a Horcrux, containing a fragment of his soul. Nagini served as both his familiar and a deadly weapon, assisting him in carrying out his plans. During the Second Wizarding War, she killed Severus Snape on Voldemort's orders and was eventually killed by Neville Longbottom with the Sword of Gryffindor during the Battle of Hogwarts."
