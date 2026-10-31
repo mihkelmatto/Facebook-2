@@ -8,7 +8,7 @@ import { applyCss } from "./utils.js";
     Prerequisites:
     - Header has to be in DOM before calling this function
     - Every link has to have href=page.html
-    - prerequisites of session.navigate()
+    - prerequisites of page-init.navigate()
 */
 export function initNavigation(navigate){
     const nav = document.querySelector(".navbar ul");

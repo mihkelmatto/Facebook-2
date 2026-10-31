@@ -27,11 +27,14 @@ async function findSession(){
     3. after the scripts are finished, unhides the body tag (removes the class of "init")
         
     prerequisites for the JS-script:
-    - has to be located in js/pages
+    - has to be located in js/pages/..
     - have a matching name (page.js)
     - export async function main(session)
-    
-    To use the hide functionality, the HTML-s body tag has to have a classname of "init"
+
+    applying this to an html file:
+    - <script type="module" src="...../page-init.js"></script>
+    - html file should be in root/html/pages/.. (required for header navigation)
+    - add class="init" to html body tag for the hide functionality
 */
 
 async function loadPage(){

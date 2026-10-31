@@ -1,47 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Login</title>
-
     <link rel="stylesheet" href="resources/css/global.css">
     <link rel="stylesheet" href="resources/css/index.css">
-
     <script type="module" src="js/pages/index.js"></script>
-    
 </head>
 
 <body>
-
     <main>
-
         <form
-            class="login-form"
-            action="html/home.html"
-            method="get">
+            id="loginform"
+            class="login-form">
 
             <p class="login-title">
                 Login
             </p>
-
+            
+            <!-- Email field -->
             <label for="email">
                 Email
             </label>
-
             <input
                 id="email"
                 type="email"
                 name="email"
                 required>
 
+            <!-- Password field -->
             <label for="password">
                 Password
             </label>
-
             <div class="password-container">
 
                 <input
@@ -59,27 +51,13 @@
 
                     <svg
                         id="eyeIcon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="22"
-                        height="22"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/>
-                        <circle cx="12" cy="12" r="3"/>
-
+                        xmlns="http://www.w3.org/2000/svg">
                     </svg>
-
                 </button>
-
             </div>
 
+            <!-- Buttons -->
             <div class="buttonsbox">
-
                 <button
                     type="submit"
                     name="action"
@@ -95,7 +73,6 @@
                     class="button login-button">
                     Login
                 </button>
-
             </div>
 
             <a
@@ -103,10 +80,7 @@
                 class="forgot-password">
                 Forgot password?
             </a>
-
         </form>
-
     </main>
-
 </body>
 </html>
