@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", function () {
 
     const passwordInput = document.getElementById("password");
@@ -47,4 +46,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-```
