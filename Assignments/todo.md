@@ -56,3 +56,18 @@ At least one “commit” from every team member.
 - Figure out what to do with sessionStorage / localStorage
     - session init
 - Session.js: use actual uid
+
+
+# Vue migration
+- navigation (router)
+- config.js
+
+pages:
+- Login
+    - done except navigation
+- Home
+- AddPost
+
+components:
+- header
+- footer
