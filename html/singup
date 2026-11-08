@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="../../resources/css/global.css">
+    <script type="module" src="../../js/page-init.js"></script>
+</head>
+<body>
+
+
+    <form action="#" method="POST" class="signup-form">
+        <h1>Sign Up</h1>
+        <input type="text" name="username" placeholder="Username" required id="username">
+        <input type="email" name="email" placeholder="Email" required id="email">
+        <input type="password" name="password" placeholder="Password" required id="password" minlength="8" maxlength="15">
+        <button type="submit">Sign Up</button>
+        
+    </form>
+
+    
+</body>
+</html>

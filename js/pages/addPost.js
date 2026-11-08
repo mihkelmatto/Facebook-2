@@ -10,3 +10,5 @@ export async function main(session){
     applyCss(CSS_DIR + "addPost.css");
     
 }
+
+
