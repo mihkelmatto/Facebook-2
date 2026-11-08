@@ -1,11 +1,94 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+    <LoginView />
 </template>
 
-<style scoped></style>
+<script setup>
+    import LoginView from './views/LoginView.vue';
+    import HomeView from './views/HomeView.vue';
+</script>
+
+<style>
+    :root {
+        /* background */
+        --bg-body: hsl(0, 0%, 25%);
+        --bg-header: hsl(0, 0%, 17%);
+        --bg-content: hsl(0, 0%, 22%);
+
+        /* border */
+        --border-primary: hsl(0, 0%, 45%);
+        --border-secondary: hsl(0, 0%, 30%);
+
+        /* text color*/
+        --text-primary: hsl(0, 0%, 100%);
+        --text-link: hsl(54, 100%, 74%);
+        --text-hover: hsl(27, 100%, 50%);
+        --text-active: hsl(0, 100%, 50%);
+
+        /* Measures */
+        --header-height: 55px;
+        --footer-height: 55px;
+    }
+
+    /* General */
+
+    .init{
+        visibility: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    p{
+        margin: 0px;
+    }
+
+    html,
+    body, 
+    #app{
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #app{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--bg-body);
+        font-family: Bahnschrift, Arial;
+        color: var(--text-primary);
+    }
+
+
+
+    a:any-link{
+        color: var(--text-link);
+        text-decoration: none;
+    }
+
+    a:any-link:hover{
+        color: var(--text-hover)
+    }
+
+    /* Main */
+
+    main{
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        
+        min-height: calc(100vh - var(--header-height));
+
+        padding: 20px 0px;
+    }
+</style>
+
+<style scoped>
+
+</style>
