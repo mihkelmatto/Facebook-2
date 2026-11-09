@@ -7,12 +7,16 @@
                 <li><RouterLink to="login">Login</RouterLink></li>
             </ul>
 
-            <div class="profile-dropdown">
-                <a class="dropdown-button">
-                    <img class="profileimg">
+            <div class="profile-dropdown" :class="{ active: dropdownActive }">
+                <a class="dropdown-button" :class="{ active: dropdownActive }"
+                    @click.prevent="dropdownActive = !dropdownActive"
+                >
+                    <img class="profileimg" :src="profileImg">
                 </a>
                 <div class="dropdown-content">
-                    <a id="logout">logout</a>
+                    <a>{{ currentuser.username }}</a>
+                    <a>{{ currentuser.email }}</a>
+                    <a id="logout" @click.prevent="logout">logout</a>
                 </div>
             </div>
         </nav>
@@ -20,7 +24,25 @@
 </template>
 
 <script setup>
+    import { ref } from 'vue';
     import { RouterLink } from 'vue-router';
+    import router from '@/router';
+    import profileIcon from '@/assets/images/profile-icon.jpg';
+
+    const dropdownActive = ref(false);
+    const profileImg = ref(profileIcon);
+
+    const currentuser = ref({
+        id: "1",
+        username: "username",
+        email: "username@gmail.com"
+    });
+
+    async function logout(){
+        console.log("logging out");
+        router.push("login");
+    }
+
 </script>
 
 

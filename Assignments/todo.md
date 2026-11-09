@@ -53,6 +53,3 @@ At least one “commit” from every team member.
 - Home
     - JS
     - posts
-
-- header
-    - dropdown
