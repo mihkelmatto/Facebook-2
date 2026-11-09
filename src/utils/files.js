@@ -1,4 +1,4 @@
-import { API_KEY, API_ROOT, BINS, USE_API } from "../../config.js";
+import { API_KEY, API_ROOT, BINS, USE_API } from "@/config";
 
 /*
     Reads locally or online, depending on USE_API value (config.js)

@@ -1,16 +1,13 @@
-import { fileExists } from "./js/utils/files.js";
+import { fileExists } from "./utils/files";
 
     /*
         File directories
     */
 
-export const ROOT_DIR = new URL("./", import.meta.url).href;
-
-export const IMG_DIR = ROOT_DIR + "resources/images/"
-export const CSS_DIR = ROOT_DIR + "resources/css/"
-export const JSON_DIR = ROOT_DIR + "resources/json/"
-export const JS_DIR = ROOT_DIR + "js/";
-export const PAGE_DIR = ROOT_DIR + "html/pages/";
+export const ROOT_DIR = new URL("../", import.meta.url).href;
+// files in the public dir are served at the root path
+export const IMG_DIR = ROOT_DIR + "/images/"
+export const JSON_DIR = ROOT_DIR + "/json/"
 
     /*
         API variables
@@ -45,11 +42,11 @@ export const BINS = {
 export async function getUserImg(userid){
     let userImg = `${IMG_DIR}profile/${userid}.jpg`;
 
-    if(!(await fileExists(userImg))){
-        userImg = `${IMG_DIR}profile/profile-icon.jpg`;
+    if(await fileExists(userImg)){
+        return userImg;
     }
 
-    return userImg;
+    return null;
 }
     /*
         returns the path for post's image
@@ -60,9 +57,9 @@ export async function getUserImg(userid){
 export async function getPostImg(postid){
     let postImg = `${IMG_DIR}posts/${postid}.jpg`
 
-    if(!(await fileExists(postImg))){
-        postImg = "";
+    if(await fileExists(postImg)){
+        return postImg;
     }
 
-    return postImg;
+    return null;
 }

@@ -49,7 +49,4 @@ At least one “commit” from every team member.
 
 # Vue migration
 - config.js
-
-- Home
-    - JS
-    - posts
+- Use real data instead of placeholders

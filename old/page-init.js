@@ -1,4 +1,4 @@
-import { JS_DIR, PAGE_DIR } from "./config.js";
+import { JS_DIR, PAGE_DIR } from "../src/config.js";
 import { Session } from "./session.js";
 import { main as headermain, initNavigation } from "./header.js";
 
