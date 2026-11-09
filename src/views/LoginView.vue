@@ -4,14 +4,10 @@
             class="login-form"
             @submit.prevent="handleSubmit">
     
-            <p class="login-title">
-                Login
-            </p>
+            <p class="login-title">Login</p>
             
             <!-- Email field -->
-            <label for="email">
-                Email
-            </label>
+            <label for="email">Email</label>
             <input
                 id="email"
                 type="email"
@@ -19,9 +15,7 @@
                 required>
     
             <!-- Password field -->
-            <label for="password">
-                Password
-            </label>
+            <label for="password">Password</label>
             <div class="password-container">
     
                 <input
@@ -39,8 +33,8 @@
 
                     <svg
                         class="eyeIcon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        v-html="showPassword ? eyeShown : eyeHidden">
+                        viewBox="0 0 24 24"
+                        v-html="showPassword ? eyeShownSVG : eyeHiddenSVG">
                     </svg>
                 </button>
             </div>
@@ -76,7 +70,7 @@
 <script setup>
     import { ref } from 'vue';
     import router from '@/router';
-    import { eyeShown, eyeHidden } from '@/assets/svg.js';
+    import { eyeShownSVG, eyeHiddenSVG } from '@/assets/svg.js';
     import { authenticate } from '@/utils/auth.js';
 
     const showPassword = ref(false);
@@ -223,16 +217,14 @@
             }
 
             .eyeIcon{
-                object-view-box: 0px 0px 24px 24px;
-        
                 width: 22px;
                 height: 22px;
-                fill: none;
-        
+
                 stroke: currentColor;
                 stroke-width: 2px;
                 stroke-linecap: round;
                 stroke-linejoin: round;
+                fill: none;
             }
         }
 

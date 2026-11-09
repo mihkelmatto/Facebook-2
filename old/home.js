@@ -1,6 +1,6 @@
-import { ROOT_DIR, CSS_DIR, getUserImg, getPostImg } from "../../config.js";
-import { readhtml } from "../utils/files.js";
-import { formatDate } from "../utils/formatting.js";
+import { ROOT_DIR, CSS_DIR, getUserImg, getPostImg } from "./config.js";
+import { readhtml } from "./js/utils/files.js";
+import { formatDate } from "./js/utils/formatting.js";
 import { applyCss } from "../utils/utils.js";
 
 /*

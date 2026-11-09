@@ -1,5 +1,5 @@
 import { JSON_DIR, USE_API } from "../../config.js";
-import { readjson } from "./files.js";
+import { readjson } from "../src/utils/files.js";
 
 export class Session{
     #usersData;

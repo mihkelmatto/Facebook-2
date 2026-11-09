@@ -1,6 +1,6 @@
-import { JS_DIR, PAGE_DIR } from "../config.js";
-import { Session } from "./utils/session.js";
-import { main as headermain, initNavigation } from "./utils/header.js";
+import { JS_DIR, PAGE_DIR } from "./config.js";
+import { Session } from "./session.js";
+import { main as headermain, initNavigation } from "./header.js";
 
 
 const session = await findSession();

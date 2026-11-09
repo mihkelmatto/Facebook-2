@@ -5,15 +5,10 @@ The term "page" might mean a view or a single page component (SPC).
 
 ## general
 
-+ the header should be a component that appears on both "pages". (2 points)
-    + it should include navigation links to both pages
-
-- the footer should be a component that appears on both "pages". (1 point)
++ the footer should be a component that appears on both "pages". (1 point)
     - it should include some basic information that traditional footers include
 
 ## home page
-
-- home page has a structure shown in the instructions (0 points)
 
 - post has to be a component that relies on vuex global store to aquire/fetch its content information (3 points)
     + is a separate component
@@ -43,20 +38,14 @@ The term "page" might mean a view or a single page component (SPC).
     - failed validation should display "password is not valid: {failed conditions}"
 
 ## done
++ home page has a structure shown in the instructions (0 points)
++ the header should be a component that appears on both "pages". (2 points)
+    + it should include navigation links to both pages
 
 + overall styling of the app (1 point)
 
 Do not forget to push all your changes to your repository.  
 At least one “commit” from every team member. 
-
-
-# other
-
-- addPost submit event
-- Figure out what to do with sessionStorage / localStorage
-    - session init
-- Session.js: use actual uid
-
 
 # Vue migration
 - config.js
@@ -64,10 +53,6 @@ At least one “commit” from every team member.
 - Home
     - JS
     - posts
-
-- AddPost
-    - JS
-    - form behaviour
 
 - header
     - dropdown

@@ -1,27 +1,7 @@
 import { ROOT_DIR, CSS_DIR, getUserImg } from "../../config.js";
-import { readhtml, readjson } from "./files.js";
+import { readhtml, readjson } from "../src/utils/files.js";
 import { applyCss } from "./utils.js";
 
-/*
-    Replaces navbar's navigation with session.navigate
-
-    Prerequisites:
-    - Header has to be in DOM before calling this function
-    - Every link has to have href=page.html
-    - prerequisites of page-init.navigate()
-*/
-export function initNavigation(navigate){
-    const nav = document.querySelector(".navbar ul");
-
-    for(let li of nav.children){
-        const a = li.querySelector("a");
-        a.addEventListener("click", e => {
-            e.preventDefault();
-            const newpage = a.getAttribute("href");
-            navigate(newpage);
-        });
-    }
-}
 
 export async function main(session){
     const activeUID = session.getActiveUID();
@@ -61,22 +41,6 @@ export async function main(session){
         email.textContent = currentuser.email;
     
         dropdowncontent.prepend(username, email);
-    }
-    
-    function getCurrentPage(){
-        const currentPage = window.location.pathname.split("/").pop();
-    
-        let i = 0;
-        switch(currentPage){
-            case "home.html":
-                i = 0;
-                break;
-            case "addPost.html":
-                i = 1;
-                break;
-        }
-    
-        return i;
     }
 }
 
