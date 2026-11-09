@@ -2,12 +2,9 @@
     <header>
         <nav class="navbar">
             <ul>
-                <li><a href="home.html">
-                    Home
-                </a></li>
-                <li><a href="addPost.html">
-                    Add Post
-                </a></li>
+                <li><RouterLink to="home">Home</RouterLink></li>
+                <li><RouterLink to="addPost">Add Post</RouterLink></li>
+                <li><RouterLink to="login">Login</RouterLink></li>
             </ul>
 
             <div class="profile-dropdown">
@@ -23,7 +20,7 @@
 </template>
 
 <script setup>
-
+    import { RouterLink } from 'vue-router';
 </script>
 
 
@@ -32,111 +29,112 @@
         z-index: 1;
         height: var(--header-height);
         border-bottom: 1px solid var(--border-primary);
+        width: 100%;
 
         background-color: var(--bg-header);
-    }
 
-    .navbar{
-        display: flex;
-        flex-direction: row;
-            
-        font-size: 20px;
-        height: 100%;
-
-        a{
-            display: block;
-            color: var(--text-primary);
-        }
-        a:hover{
-            background-color: hsl(0, 0%, 10%);
-            color: var(--text-hover);
-        }
-        a.active{
-            color: var(--text-active);
-        }
-
-        > ul{
+        .navbar{
             display: flex;
             flex-direction: row;
-            justify-content: left;
-            align-items: center;
-            
-            flex-grow: 1;
-            height: 100%;
-
-            list-style-type: none;
-            margin: 0px;
-            padding: 0px;
-
-            > li{
-                flex: 0 1 175px;
-                min-width: max-content;
-                display: block;
-
-                height: 100%;
-
-                > a{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-        }
-
-        .profile-dropdown{
-            position: relative;
-            flex: 0 0 var(--header-height);
-
-            width: var(--header-height);
-            height: 100%;
-
-            cursor: pointer;
-
-            > .dropdown-button{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                height: 100%;
-                aspect-ratio: 1 / 1;           
-
-                > img{
-                    height: 80%;
-                    aspect-ratio: 1 / 1;
-                    border-radius: 50%;
-                }
-            }
-
-            .dropdown-content{
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 3px;
-
-                width: min(250px, 70vw);
-                min-width: 100%;
                 
-                background-color: var(--bg-header);
-                border-bottom: 2px solid var(--border-primary);
-
-                > a{ 
+            font-size: 20px;
+            height: 100%;
+    
+            a{
+                display: block;
+                color: var(--text-primary);
+            }
+            a:hover{
+                background-color: hsl(0, 0%, 10%);
+                color: var(--text-hover);
+            }
+            a.active{
+                color: var(--text-active);
+            }
+    
+            > ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: left;
+                align-items: center;
+                
+                flex-grow: 1;
+                height: 100%;
+    
+                list-style-type: none;
+                margin: 0px;
+                padding: 0px;
+    
+                > li{
+                    flex: 0 1 175px;
+                    min-width: max-content;
+                    display: block;
+    
+                    height: 100%;
+    
+                    > a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+    
+            .profile-dropdown{
+                position: relative;
+                flex: 0 0 var(--header-height);
+    
+                width: var(--header-height);
+                height: 100%;
+    
+                cursor: pointer;
+    
+                > .dropdown-button{
                     display: flex;
                     align-items: center;
                     justify-content: center;
-
-                    min-height: var(--header-height);
-                    padding: 5px 10px;
-
-                    overflow-wrap: anywhere;
+    
+                    height: 100%;
+                    aspect-ratio: 1 / 1;           
+    
+                    > img{
+                        height: 80%;
+                        aspect-ratio: 1 / 1;
+                        border-radius: 50%;
+                    }
+                }
+    
+                .dropdown-content{
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    right: 3px;
+    
+                    width: min(250px, 70vw);
+                    min-width: 100%;
+                    
+                    background-color: var(--bg-header);
+                    border-bottom: 2px solid var(--border-primary);
+    
+                    > a{ 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        min-height: var(--header-height);
+                        padding: 5px 10px;
+    
+                        overflow-wrap: anywhere;
+                    }
                 }
             }
-        }
-
-        .profile-dropdown.active .dropdown-content{
-            display: block;
+    
+            .profile-dropdown.active .dropdown-content{
+                display: block;
+            }
         }
     }
 </style>

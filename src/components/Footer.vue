@@ -1,6 +1,5 @@
 <template>
     <footer>
-        
     </footer>
 </template>
 
@@ -8,7 +7,8 @@
 <style scoped>
     footer{
         z-index: 1;
-        height: var(--header-height);
+        width: 100%;
+        height: var(--footer-height);
         border-top: 1px solid var(--border-primary);
 
         background-color: var(--bg-header);

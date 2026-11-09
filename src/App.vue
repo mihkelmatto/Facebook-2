@@ -1,10 +1,9 @@
 <template>
-    <LoginView />
+    <RouterView />
 </template>
 
 <script setup>
-    import LoginView from './views/LoginView.vue';
-    import HomeView from './views/HomeView.vue';
+    import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <style>
@@ -48,15 +47,13 @@
     #app{
         margin: 0px;
         padding: 0px;
-        height: 100%;
+        min-height: 100%;
         width: 100%;
     }
     
     #app{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
         background-color: var(--bg-body);
         font-family: Bahnschrift, Arial;

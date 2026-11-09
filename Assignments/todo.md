@@ -59,15 +59,15 @@ At least one “commit” from every team member.
 
 
 # Vue migration
-- navigation (router)
 - config.js
 
-pages:
-- Login
-    - done except navigation
 - Home
-- AddPost
+    - JS
+    - posts
 
-components:
+- AddPost
+    - JS
+    - form behaviour
+
 - header
-- footer
+    - dropdown

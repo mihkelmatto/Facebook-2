@@ -1,5 +1,5 @@
 <template>
-    <div class="LoginView">
+    <main>
         <form
             class="login-form"
             @submit.prevent="handleSubmit">
@@ -70,11 +70,12 @@
                 Forgot password?
             </a>
         </form>
-    </div>
+    </main>
 </template>
 
 <script setup>
     import { ref } from 'vue';
+    import router from '@/router';
     import { eyeShown, eyeHidden } from '@/assets/svg.js';
     import { authenticate } from '@/utils/auth.js';
 
@@ -110,20 +111,23 @@
         }
         
         console.log("login successful");
+        router.push('home');
     }
 
     async function register(email, password){
         console.log("register successful");
+        router.push('home');
     }
 
     function forgotPassword(){
         console.log("forgot password");
+        router.push('home');
     }
 
 </script>
 
 <style scoped>
-    .LoginView {
+    main {
         --button-primary: hsl(210, 79%, 46%);
         --button-primary-hover: hsl(210, 79%, 36%);
 
@@ -132,9 +136,9 @@
 
         --default-padding: 10px 20px;
 
-        width: min(680px, 90%);
-        height: 500px;
-        
+        justify-content: center;
+        min-height: 100vh;
+
         .login-form {
             display: flex;
             flex-direction: column;
@@ -146,8 +150,8 @@
             border-radius: 10px;
             background-color: var(--bg-content);
     
-            width: 100%;
-            height: 100%;
+            width: min(680px, 90%);
+            height: 500px;
             
             padding: 30px;
         }
