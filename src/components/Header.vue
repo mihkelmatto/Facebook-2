@@ -4,18 +4,17 @@
             <ul>
                 <li><RouterLink to="home">Home</RouterLink></li>
                 <li><RouterLink to="addPost">Add Post</RouterLink></li>
-                <li><RouterLink to="login">Login</RouterLink></li>
             </ul>
 
             <div class="profile-dropdown" :class="{ active: dropdownActive }">
                 <a class="dropdown-button" :class="{ active: dropdownActive }"
                     @click.prevent="dropdownActive = !dropdownActive"
                 >
-                    <img class="profileimg" :src="profileImg">
+                    <img class="profileimg" :src="userStore.userImg">
                 </a>
                 <div class="dropdown-content">
-                    <a>{{ currentuser.username }}</a>
-                    <a>{{ currentuser.email }}</a>
+                    <a>{{ userStore.username }}</a>
+                    <a>{{ userStore.email }}</a>
                     <a id="logout" @click.prevent="logout">logout</a>
                 </div>
             </div>
@@ -27,22 +26,15 @@
     import { ref } from 'vue';
     import { RouterLink } from 'vue-router';
     import router from '@/router';
-    import profileIcon from '@/assets/images/profile-icon.jpg';
+    import { useUserStore } from '@/stores/userStore';
 
+    const userStore = useUserStore();
     const dropdownActive = ref(false);
-    const profileImg = ref(profileIcon);
-
-    const currentuser = ref({
-        id: "1",
-        username: "username",
-        email: "username@gmail.com"
-    });
 
     async function logout(){
         console.log("logging out");
         router.push("login");
     }
-
 </script>
 
 

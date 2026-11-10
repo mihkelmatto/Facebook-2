@@ -38,7 +38,6 @@
 </template>
 
 <script setup>
-    import profileIcon from '@/assets/images/profile-icon.jpg';
     import { likeSVG } from '@/assets/svg';
 
     const { post } = defineProps({

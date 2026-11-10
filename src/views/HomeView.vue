@@ -13,12 +13,13 @@
     import Footer from '@/components/Footer.vue';
     import Header from '@/components/Header.vue';
     import Post from '@/components/Post.vue';
+    import { usePostsStore } from '@/stores/postsStore';
     
     import { ref } from 'vue';
-    import { data } from '../../public/json/temp_data';
 
-    const posts = ref(data);
-    
+    const postsStore = usePostsStore();
+
+    const posts = ref(postsStore.posts);
 </script>
 
 <style scoped>

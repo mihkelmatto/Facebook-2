@@ -3,7 +3,33 @@
 </template>
 
 <script setup>
-    import { RouterLink, RouterView } from 'vue-router';
+    import { RouterView } from 'vue-router';
+    import { useDataStore } from './stores/dataStore';
+    import { useUserStore } from './stores/userStore';
+    import { onMounted } from 'vue';
+import { usePostsStore } from './stores/postsStore';
+
+    /*
+        Everything is here because of a race-condition issue.
+        (init needs a loading tag)
+    */
+   
+    onMounted(async () => {
+        const dataStore = useDataStore();
+        if(!dataStore.initialized){
+            await dataStore.init();
+        }
+
+        const userStore = useUserStore();
+        if(!userStore.initialized){
+            await userStore.init(1);
+        }
+
+        const postsStore = usePostsStore();
+        if(!postsStore.initialized){
+            await postsStore.init();
+        }
+    })
 </script>
 
 <style>

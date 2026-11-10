@@ -1,9 +1,3 @@
-import { fileExists } from "./utils/files";
-
-    /*
-        File directories
-    */
-
 export const ROOT_DIR = new URL("../", import.meta.url).href;
 // files in the public dir are served at the root path
 export const IMG_DIR = ROOT_DIR + "/images/"
@@ -30,36 +24,4 @@ export const BINS = {
     "posts.json": BIN_POSTS,
     "users.json": BIN_USERS,
     "post_likes.json": BIN_POST_LIKES
-}
-
-    /*
-        returns the path for user's profile image
-        - all images have to be jpg
-        - img name = userid
-        - default: profile-icon.jpg
-    */
-
-export async function getUserImg(userid){
-    let userImg = `${IMG_DIR}profile/${userid}.jpg`;
-
-    if(await fileExists(userImg)){
-        return userImg;
-    }
-
-    return null;
-}
-    /*
-        returns the path for post's image
-        - all images have to be jpg
-        - img name = postid
-    */
-
-export async function getPostImg(postid){
-    let postImg = `${IMG_DIR}posts/${postid}.jpg`
-
-    if(await fileExists(postImg)){
-        return postImg;
-    }
-
-    return null;
 }
