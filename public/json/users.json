@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "email": "tom@gmail.com",
+        "username": "Tom Marvolo Riddle",
+        "password": ""
+    },
+    {   
+        "id": 2,
+        "email": "albus@gmail.com",
+        "username": "Albus Percival Wulfric Brian Dumbledore",
+        "password": ""
+    },
+    {
+        "id": 3,
+        "email": "severus@gmail.com",
+        "username": "Severus Snape",
+        "password": ""
+    },
+    {
+        "id": 4,
+        "email": "bellatrix@gmail.com",
+        "username": "Bellatrix Lestrange",
+        "password": ""
+    },
+    {
+        "id": 5,
+        "email": "sirius@gmail.com",
+        "username": "Sirius Black",
+        "password": ""
+    },
+    {
+        "id": 6,
+        "email": "harryp@gmail.com",
+        "username": "Harry James Potter",
+        "password": ""
+    },
+    {
+        "id": 7,
+        "email": "hermioneg@gmail.com",
+        "username": "Hermione Jean Granger",
+        "password": ""
+    },
+    {
+        "id": 8,
+        "email": "ronweasley@gmail.com",
+        "username": "Ronald Bilius Weasley",
+        "password": ""
+    },
+    {
+        "id": 9,
+        "email": "dracomalfoy@gmail.com",
+        "username": "Draco Lucius Malfoy",
+        "password": ""
+    },
+    {
+        "id": 10,
+        "email": "nagini@gmail.com",
+        "username": "Nagini",
+        "password": ""
+    }
+]

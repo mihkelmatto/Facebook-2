@@ -1,0 +1,117 @@
+<template>
+    <RouterView />
+</template>
+
+<script setup>
+    import { RouterView } from 'vue-router';
+    import { useDataStore } from './stores/dataStore';
+    import { useUserStore } from './stores/userStore';
+    import { onMounted } from 'vue';
+import { usePostsStore } from './stores/postsStore';
+
+    /*
+        Everything is here because of a race-condition issue.
+        (init needs a loading tag)
+    */
+   
+    onMounted(async () => {
+        const dataStore = useDataStore();
+        if(!dataStore.initialized){
+            await dataStore.init();
+        }
+
+        const userStore = useUserStore();
+        if(!userStore.initialized){
+            await userStore.init(1);
+        }
+
+        const postsStore = usePostsStore();
+        if(!postsStore.initialized){
+            await postsStore.init();
+        }
+    })
+</script>
+
+<style>
+    :root {
+        /* background */
+        --bg-body: hsl(0, 0%, 25%);
+        --bg-header: hsl(0, 0%, 17%);
+        --bg-content: hsl(0, 0%, 22%);
+
+        /* border */
+        --border-primary: hsl(0, 0%, 45%);
+        --border-secondary: hsl(0, 0%, 30%);
+
+        /* text color*/
+        --text-primary: hsl(0, 0%, 100%);
+        --text-link: hsl(54, 100%, 74%);
+        --text-hover: hsl(27, 100%, 50%);
+        --text-active: hsl(0, 100%, 50%);
+
+        /* Measures */
+        --header-height: 55px;
+        --footer-height: 55px;
+    }
+
+    /* General */
+
+    .init{
+        visibility: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    p{
+        margin: 0px;
+    }
+
+    html,
+    body, 
+    #app{
+        margin: 0px;
+        padding: 0px;
+        min-height: 100%;
+        width: 100%;
+    }
+    
+    #app{
+        display: flex;
+        flex-direction: column;
+
+        background-color: var(--bg-body);
+        font-family: Bahnschrift, Arial;
+        color: var(--text-primary);
+    }
+
+
+
+    a:any-link{
+        color: var(--text-link);
+        text-decoration: none;
+    }
+
+    a:any-link:hover{
+        color: var(--text-hover)
+    }
+
+    /* Main */
+
+    main{
+        z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        
+        min-height: calc(100vh - var(--header-height));
+
+        padding: 20px 0px;
+    }
+</style>
+
+<style scoped>
+
+</style>

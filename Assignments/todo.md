@@ -2,26 +2,12 @@
 You are required to create your app using Vue + Vuex techniques
 The term "page" might mean a view or a single page component (SPC).
 
-
 ## general
 
-+ the header should be a component that appears on both "pages". (2 points)
-    + it should include navigation links to both pages
-
-- the footer should be a component that appears on both "pages". (1 point)
++ the footer should be a component that appears on both "pages". (1 point)
     - it should include some basic information that traditional footers include
 
 ## home page
-
-- home page has a structure shown in the instructions (0 points)
-
-- post has to be a component that relies on vuex global store to aquire/fetch its content information (3 points)
-    + is a separate component
-    - relies on vuex global store
-
-- post should have a like button accompanied with the number of likes (2 points)
-    + like button works and can read like data from file
-    - new like data is saved to file
 
 - add a button to the main page that resets the number of likes in all posts to zero (2 points)
 
@@ -43,16 +29,17 @@ The term "page" might mean a view or a single page component (SPC).
     - failed validation should display "password is not valid: {failed conditions}"
 
 ## done
++ the header should be a component that appears on both "pages". (2 points)
++ home page has a structure shown in the instructions (0 points)
++ post has to be a component that relies on vuex global store to aquire/fetch its content information (3 points)
++ post should have a like button accompanied with the number of likes (2 points)
 
 + overall styling of the app (1 point)
 
 Do not forget to push all your changes to your repository.  
 At least one “commit” from every team member. 
 
-
 # other
-
-- addPost submit event
-- Figure out what to do with sessionStorage / localStorage
-    - session init
-- Session.js: use actual uid
+- add loading variables // queue to stores.
+- test if API still works
+- write files
