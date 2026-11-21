@@ -1,7 +1,7 @@
-export const ROOT_DIR = new URL("../", import.meta.url).href;
+export const ROOT_DIR = import.meta.env.BASE_URL;
 // files in the public dir are served at the root path
-export const IMG_DIR = ROOT_DIR + "/images/"
-export const JSON_DIR = ROOT_DIR + "/json/"
+export const IMG_DIR = ROOT_DIR + "images/";
+export const JSON_DIR = ROOT_DIR + "json/";
 
     /*
         API variables

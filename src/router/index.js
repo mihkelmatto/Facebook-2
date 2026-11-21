@@ -6,12 +6,13 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import AddPost from '@/views/AddPost.vue';
 import LoginView from '@/views/LoginView.vue';
+import SignupView from '@/views/SignupView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'root',
-    redirect: '/login'
+    redirect: '/signup'
   },
   {
     path: '/home',
@@ -27,6 +28,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignupView
   }
 ]
 
