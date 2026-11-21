@@ -11,7 +11,7 @@ The term "page" might mean a view or a single page component (SPC).
 
 - add a button to the main page that resets the number of likes in all posts to zero (2 points)
 
-## signup page
+## signup page Gabi
 
 - signup page has a structure shown in the instructions (0 points)
 
