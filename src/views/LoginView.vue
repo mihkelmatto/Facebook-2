@@ -97,7 +97,7 @@
     }
 
     async function login(email, password){
-        const authenticated = await authenticate(email, password);
+        const [authenticated, userid] = await authenticate(email, password);
 
         if(!authenticated){
             console.log("Authentication failed");

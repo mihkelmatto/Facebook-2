@@ -4,7 +4,6 @@
             <ul>
                 <li><RouterLink to="home">Home</RouterLink></li>
                 <li><RouterLink to="addPost">Add Post</RouterLink></li>
-                <li><RouterLink to="/signup">Sign up</RouterLink></li>
             </ul>
 
             <div class="profile-dropdown" :class="{ active: dropdownActive }">

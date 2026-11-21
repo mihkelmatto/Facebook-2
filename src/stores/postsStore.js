@@ -12,21 +12,24 @@ function setup(){
     const dataStore = useDataStore();
     const userStore = useUserStore();
 
-    const posts = ref([]);
+    const postsFormatted = ref([]);
     const initialized = ref(false);
 
     async function init(){
-        const activeUID = userStore.id;
-              
-        for(let post of dataStore.posts){
-            posts.value.push(await formatPost(post, activeUID));
-        }
-
+        await refresh();
         initialized.value = true;
+        console.log("postsStore initialized");
     }
 
     async function refresh(){
-        console.log("postsStore refresh function called");
+        const activeUID = userStore.id;
+        postsFormatted.value.length = 0;
+        
+        for(let post of dataStore.posts){
+            postsFormatted.value.push(await formatPost(post, activeUID));
+        }
+
+        if(initialized.value) console.log("postsStore refreshed");
     }
 
     async function formatPost(post, activeUID){      
@@ -51,6 +54,6 @@ function setup(){
 
     return {
         init, initialized, refresh,
-        posts
+        postsFormatted
     };
 }
