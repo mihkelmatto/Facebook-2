@@ -24,5 +24,5 @@ export function failedConditions(password){
         failed.push('includes the character "_"');
     }
 
-    return failed;
+    return failed.join(", ");
 };

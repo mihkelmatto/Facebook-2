@@ -42,10 +42,8 @@
             <!-- Buttons -->
             <div class="buttonsbox">
                 <button
-                    type="submit"
-                    name="action"
-                    value="register"
-                    class="register-button">
+                    class="register-button"
+                    @click.prevent="register">
                     Register
                 </button>
     
@@ -110,7 +108,7 @@
 
     async function register(email, password){
         console.log("register successful");
-        router.push('home');
+        router.push('signup');
     }
 
     function forgotPassword(){
