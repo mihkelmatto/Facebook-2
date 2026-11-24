@@ -4,14 +4,15 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 
 import HomeView from '@/views/HomeView.vue';
-import AddPost from '@/views/AddPost.vue';
+import AddPostView from '@/views/AddPostView.vue';
 import LoginView from '@/views/LoginView.vue';
+import SignupView from '@/views/SignupView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'root',
-    redirect: '/login'
+    redirect: 'login'
   },
   {
     path: '/home',
@@ -21,12 +22,17 @@ const routes = [
   {
     path: '/addPost',
     name: 'addPost',
-    component: AddPost
+    component: AddPostView
   },
   {
     path: '/login',
     name: 'login',
     component: LoginView
+  },
+  {
+    path: '/signup',
+    name: 'signup',
+    component: SignupView
   }
 ]
 

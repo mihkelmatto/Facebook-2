@@ -16,6 +16,7 @@ function setup(){
     const initialized = ref(false);
 
     async function init(id){
+
         const data = dataStore.getUserData(id);
     
         if(data === null){
@@ -29,6 +30,7 @@ function setup(){
         userImg.value = await dataStore.getUserImg(id);
 
         initialized.value = true;
+        console.log("userStore initialized");
     }
 
     return {

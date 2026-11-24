@@ -30,6 +30,7 @@ function setup(){
         postLikes.value = c;
 
         initialized.value = true;
+        console.log("dataStore initialized");
     }
 
     async function save(){
@@ -58,6 +59,19 @@ function setup(){
         }
         console.error("dataStore: userdata not found");
         return null;
+    }
+
+    /*
+        This should only be used in login before auth
+    */
+
+    function getUserID(email){
+        for(let user of users.value){
+            if(user.email == email){
+                return user.id;
+            }
+        }
+        console.log("dataStore: user not found");
     }
 
     async function getUserImg(userid){
@@ -97,6 +111,7 @@ function setup(){
         };
 
         postLikes.value.push(rel);
+        console.log(`Like added: userid ${userid}, postid ${postid}`);
     }
 
     function removeLike(postid, userid){
@@ -107,12 +122,19 @@ function setup(){
         if(i === -1) return;
 
         postLikes.value.splice(i, 1);
+        console.log(`Like removed: userid ${userid}, postid ${postid}`);
+    }
+
+    // clears the contents of postLikes
+    function resetLikes(){
+        postLikes.value.length = 0;
+        console.log("Like data reset");
     }
 
     return {
-            users, posts, postLikes,
+            users, posts, postLikes, resetLikes,
             init, initialized, save,
-            getUsername, getUserImg, getUserData, 
+            getUsername, getUserImg, getUserData, getUserID, 
             getLikes, isLiked, addLike, removeLike
-        };
+    };
 }

@@ -39,15 +39,28 @@
 
 <script setup>
     import { likeSVG } from '@/assets/svg';
+    import { useDataStore } from '@/stores/dataStore';
+    import { useUserStore } from '@/stores/userStore';
+
+    const dataStore = useDataStore();
+    const userStore = useUserStore();
 
     const { post } = defineProps({
         post: Object
     })
 
-    // TODO: doesn't update the underlying data correctly (+ potential loss of reactivity)
+    // TODO: is there a better way to update stores?
+
     function like(){
         post.liked = !post.liked;
         post.likecount += (post.liked ? 1 : -1);
+        
+        if(post.liked){
+            dataStore.addLike(post.id, userStore.userid);
+        }
+        else{
+            dataStore.removeLike(post.id, userStore.userid);
+        }
     }
 
 </script>

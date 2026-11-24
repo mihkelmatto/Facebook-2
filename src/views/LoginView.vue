@@ -42,10 +42,8 @@
             <!-- Buttons -->
             <div class="buttonsbox">
                 <button
-                    type="submit"
-                    name="action"
-                    value="register"
-                    class="register-button">
+                    class="register-button"
+                    @click.prevent="register">
                     Register
                 </button>
     
@@ -97,7 +95,7 @@
     }
 
     async function login(email, password){
-        const authenticated = await authenticate(email, password);
+        const [authenticated, userid] = await authenticate(email, password);
 
         if(!authenticated){
             console.log("Authentication failed");
@@ -110,7 +108,7 @@
 
     async function register(email, password){
         console.log("register successful");
-        router.push('home');
+        router.push('signup');
     }
 
     function forgotPassword(){
