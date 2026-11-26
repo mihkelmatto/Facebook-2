@@ -1,9 +1,8 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import App from './App.vue'
-import router from './router/index.js'
+import router from './router'
+import store from './store'
+import Vueform from '@vueform/vueform'
+import vueformConfig from '../vueform.config'
 
-const pinia = createPinia();
-const app = createApp(App);
-
-app.use(router).use(pinia).mount('#app');
+createApp(App).use(store).use(router).use(Vueform, vueformConfig).mount('#app')

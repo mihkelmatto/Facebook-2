@@ -1,215 +1,164 @@
 <template>
-    <main class="signup-main">
-        <form class="signup-form" @submit.prevent="handleSubmit" novalidate>
-            <p class="signup-title">Sign up</p>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@vueform/vueform@1.13.13/dist/vueform.css"
+  />
 
-            <label for="email">Email</label>
-            <input
-                id="email"
-                v-model.trim="email"
-                type="email"
-                name="email"
-                autocomplete="email"
-                required
-            >
+  <div class="register-page">
+    <h1>Create Account</h1>
 
-            <label for="password">Password</label>
-            <input
-                id="password"
-                v-model="password"
-                type="password"
-                name="password"
-                autocomplete="new-password"
-                required
-                :aria-invalid="passwordText.length > 0"
-                aria-describedby="password-error password-requirements"
-            >
+    <div class="register-form">
+      <Vueform
+        add-class="form-layout"
+        @submit="handleRegistration"
+        :display-errors="false"
+      >
+        <TextElement
+          name="userEmail"
+          label="Email Address"
+          placeholder="Enter your email"
+        />
 
-            <div class="buttonsbox">
-                <button class="back-button" @click="router.push('login')">Back</button>
-                <button type="submit" class="signup-button">Sign up</button>
-            </div>
-            
-            <p id="password-requirements"
-                class="requirements"
-                :class="{'validation-error': passwordText.length != 0}">
-                {{ passwordText }}
-            </p>
-        
-            <p v-if="emailError" class="validation-error" role="alert">
-                {{ emailError }}
-            </p>
-            
-        </form>
-    </main>
+        <TextElement
+          name="userPassword"
+          input-type="password"
+          label="Create Password"
+          placeholder="Enter your password"
+        />
+
+        <ButtonElement
+          name="registerAction"
+          submits
+          :add-classes="{ button: 'register-btn' }"
+        >
+          Create Account
+        </ButtonElement>
+      </Vueform>
+    </div>
+
+    <div v-if="registrationComplete" class="modal-backdrop" @click.self="dismissModal">
+      <div class="modal-window" role="dialog" aria-modal="true">
+        <h2>Registration Complete!</h2>
+        <p>Your account has been created successfully.</p>
+        <button class="confirm-btn" @click="dismissModal">Continue</button>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script setup>
-    import { ref } from 'vue';
-    import router from '@/router';
-    import { failedConditions } from '@/utils/auth.js';
+<script>
+export default {
+  name: "RegisterPage",
 
-    const email = ref('');
-    const password = ref('');
-    const passwordText = ref("8–14 characters; starts with an uppercase letter; at least two lowercase letters, one number and one underscore (_).");
-    const emailError = ref('');
+  data() {
+    return {
+      registrationComplete: false,
+    };
+  },
 
-    function handleSubmit() {
-        refreshPasswordText();
-        emailError.value = '';
+  methods: {
+    handleRegistration(form$) {
+      const enteredPassword = form$.data.userPassword;
+      const passwordField = form$.el$("userPassword");
 
-        if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-            passwordText.value = "";
-            emailError.value = 'Please enter a valid email address.';
-            return;
+      passwordField.messageBag.clear();
+
+      const validationMessages = [];
+
+      if (!enteredPassword) {
+        validationMessages.push("Password cannot be empty.");
+      } else {
+        if (enteredPassword.length < 8 || enteredPassword.length > 14) {
+          validationMessages.push("Password must contain between 8 and 14 characters.");
         }
 
-
-        if(passwordText.value.length != 0){
-            return;
+        if (!/[A-Z]/.test(enteredPassword)) {
+          validationMessages.push("Include at least one uppercase letter.");
         }
 
-        console.log('Signup successful:', email.value);
-        router.push('home');
-    }
+        if ((enteredPassword.match(/[a-z]/g) || []).length < 2) {
+          validationMessages.push("Include at least two lowercase letters.");
+        }
 
-    function refreshPasswordText(){
-        passwordText.value = "";
-        passwordText.value = failedConditions(password.value);
-    }
+        if (!/[0-9]/.test(enteredPassword)) {
+          validationMessages.push("Include at least one digit.");
+        }
 
+        if (!enteredPassword.includes("_")) {
+          validationMessages.push("Include an underscore (_).");
+        }
+
+        if (!/^[A-Z]/.test(enteredPassword)) {
+          validationMessages.push("The password must begin with an uppercase letter.");
+        }
+      }
+
+      if (validationMessages.length) {
+        passwordField.messageBag.append(
+          `Password requirements: ${validationMessages.join(" ")}`
+        );
+        return;
+      }
+
+      this.registrationComplete = true;
+    },
+
+    dismissModal() {
+      this.registrationComplete = false;
+      this.$router.push("/");
+    },
+  },
+};
 </script>
 
 <style scoped>
-    main{
-        --button-primary: hsl(210, 79%, 46%);
-        --button-primary-hover: hsl(210, 79%, 36%);
+.register-page {
+  max-width: 440px;
+  margin: 30px auto;
+  padding: 28px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
 
-        --button-secondary: hsl(0, 0%, 15%);
-        --button-secondary-hover: hsl(0, 0%, 10%);
+.register-page h1 {
+  color: var(--primary);
+}
 
-        --default-padding: 10px 20px;
+.register-form :deep(.form-layout) {
+  padding: 8px 14px;
+  color: var(--text);
+  font-weight: 600;
+  border-radius: 12px;
+}
 
-        justify-content: center;
-        height: 100vh;
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-        .signup-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-    
-            border: 1px solid var(--border-secondary);
-            border-radius: 10px;
-            background-color: var(--bg-content);
-    
-            width: min(680px, 90%);
-            min-height: 500px;
-    
-            padding: 30px;
-        }
+.modal-window {
+  background: var(--card, #ffffff);
+  color: var(--text, #222222);
+  padding: 28px 34px;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 280px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
 
-        label{
-            width: 100%;
-            font-size: 18px;
-        }
-
-        .signup-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    
-            width: 100%;
-    
-            font-size: 35px;
-            line-height: 1.5;
-            font-weight: bold;
-        }
-    
-        .signup-form input {
-            width: 100%;
-            height: 50px;
-            padding: 10px 15px;
-            border: 1px solid var(--border-secondary);
-            border-radius: 10px;
-            background-color: var(--bg-content);
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 18px;
-        }
-    
-        .signup-form input:focus {
-            outline: none;
-            border-color: hsl(210, 79%, 46%);
-        }
-    
-        .requirements {
-            width: 100%;
-            color: hsl(0, 0%, 75%);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-    
-        .validation-error {
-            width: 100%;
-            color: #ff7777;
-            font-size: 14px;
-            line-height: 1.5;
-            overflow-wrap: anywhere;
-        }
-    
-        .buttonsbox{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-    
-            width: 100%;
-            margin-top: 15px;
-    
-            button{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                
-                width: 50%;
-                min-width: 0;
-                min-height: 55px;
-        
-                padding: var(--default-padding);
-        
-                border: none;
-                border-radius: 10px;
-        
-                color: var(--text-primary);
-        
-                font-family: inherit;
-                font-size: 20px;
-        
-                cursor: pointer;
-            }
-
-            .signup-button {
-                background-color: var(--button-primary);
-            }
-
-            .signup-button:hover {
-                background-color: var(--button-primary-hover);
-                color: var(--text-hover);
-            }
-
-            .back-button{
-                background-color: var(--button-secondary);
-            }
-
-            .back-button:hover{
-                background-color: var(--button-secondary-hover);
-                color: var(--text-hover);
-            }
-    
-        }
-    }
+.confirm-btn {
+  margin-top: 14px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 26px;
+  cursor: pointer;
+}
 </style>
-

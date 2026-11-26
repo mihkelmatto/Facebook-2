@@ -1,0 +1,84 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "authorName": "alex_01",
+      "createdAt": 1793432700000,
+      "description": "Finally finished my weekend hiking trip!",
+      "image": "img/hiking.jpeg",
+      "likes": 14
+    },
+    {
+      "id": 2,
+      "authorName": "sarah_02",
+      "createdAt": 1793389500000,
+      "description": "Does anyone know when the next lecture starts?",
+      "image": null,
+      "likes": 8
+    },
+    {
+      "id": 3,
+      "authorName": "mike_03",
+      "createdAt": 1793303100000,
+      "description": "Homemade pizza for dinner tonight!",
+      "image": "img/pizza.jpeg",
+      "likes": 19
+    },
+    {
+      "id": 4,
+      "authorName": "emma_04",
+      "createdAt": 1793216700000,
+      "description": "Anyone up for a movie this weekend?",
+      "image": null,
+      "likes": 6
+    },
+    {
+      "id": 5,
+      "authorName": "david_05",
+      "createdAt": 1793129400000,
+      "description": "Beautiful sunset by the beach today.",
+      "image": "img/sunset.jpeg",
+      "likes": 27
+    },
+    {
+      "id": 6,
+      "authorName": "lisa_06",
+      "createdAt": 1793043000000,
+      "description": "Why does debugging always take longer than coding?",
+      "image": null,
+      "likes": 12
+    },
+    {
+      "id": 7,
+      "authorName": "john_07",
+      "createdAt": 1792956600000,
+      "description": "Found my new favourite coffee spot!",
+      "image": "img/coffee.jpeg",
+      "likes": 23
+    },
+    {
+      "id": 8,
+      "authorName": "nina_08",
+      "createdAt": 1792870200000,
+      "description": "Reminder: project submissions are due tomorrow!",
+      "image": null,
+      "likes": 5
+    },
+    {
+      "id": 9,
+      "authorName": "peter_09",
+      "createdAt": 1792783800000,
+      "description": "Weekend vibes! Time to relax.",
+      "image": "img/weekend.jpeg",
+      "likes": 32
+    },
+    {
+      "id": 10,
+      "authorName": "anna_10",
+      "createdAt": 1792697400000,
+      "description": "Can someone recommend a good JavaScript tutorial?",
+      "image": null,
+      "likes": 3
+    }
+  ]
+}

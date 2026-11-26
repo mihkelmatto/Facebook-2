@@ -1,117 +1,59 @@
 <template>
-    <RouterView />
+  <HeaderBar />
+  <main class="page">
+    <router-view />
+  </main>
+  <FooterBar />
 </template>
 
-<script setup>
-    import { RouterView } from 'vue-router';
-    import { useDataStore } from './stores/dataStore';
-    import { useUserStore } from './stores/userStore';
-    import { onMounted } from 'vue';
-import { usePostsStore } from './stores/postsStore';
+<script>
+import HeaderBar from "@/components/HeaderBar.vue";
+import FooterBar from "@/components/FooterBar.vue";
 
-    /*
-        Everything is here because of a race-condition issue.
-        (init needs a loading tag)
-    */
-   
-    onMounted(async () => {
-        const dataStore = useDataStore();
-        if(!dataStore.initialized){
-            await dataStore.init();
-        }
-
-        const userStore = useUserStore();
-        if(!userStore.initialized){
-            await userStore.init(1);
-        }
-
-        const postsStore = usePostsStore();
-        if(!postsStore.initialized){
-            await postsStore.init();
-        }
-    })
+export default {
+  name: "App",
+  components: { HeaderBar, FooterBar },
+};
 </script>
 
 <style>
-    :root {
-        /* background */
-        --bg-body: hsl(0, 0%, 25%);
-        --bg-header: hsl(0, 0%, 17%);
-        --bg-content: hsl(0, 0%, 22%);
+:root {
+  --bg: #f0f2f5;
+  --card: #ffffff;
+  --text: #1c1e21;
+  --muted: #65676b;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: #e7f0fe;
+  --border: #dddddd;
+  --error: #d93025;
+  --accent: #d34da6;
+  --radius: 16px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-        /* border */
-        --border-primary: hsl(0, 0%, 45%);
-        --border-secondary: hsl(0, 0%, 30%);
+* {
+  box-sizing: border-box;
+}
 
-        /* text color*/
-        --text-primary: hsl(0, 0%, 100%);
-        --text-link: hsl(54, 100%, 74%);
-        --text-hover: hsl(27, 100%, 50%);
-        --text-active: hsl(0, 100%, 50%);
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
 
-        /* Measures */
-        --header-height: 55px;
-        --footer-height: 55px;
-    }
+#app {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
-    /* General */
-
-    .init{
-        visibility: hidden;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    p{
-        margin: 0px;
-    }
-
-    html,
-    body, 
-    #app{
-        margin: 0px;
-        padding: 0px;
-        min-height: 100%;
-        width: 100%;
-    }
-    
-    #app{
-        display: flex;
-        flex-direction: column;
-
-        background-color: var(--bg-body);
-        font-family: Bahnschrift, Arial;
-        color: var(--text-primary);
-    }
-
-
-
-    a:any-link{
-        color: var(--text-link);
-        text-decoration: none;
-    }
-
-    a:any-link:hover{
-        color: var(--text-hover)
-    }
-
-    /* Main */
-
-    main{
-        z-index: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        
-        min-height: calc(100vh - var(--header-height));
-
-        padding: 20px 0px;
-    }
-</style>
-
-<style scoped>
-
+.page {
+  flex: 1;
+}
 </style>
